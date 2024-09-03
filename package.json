@@ -2,7 +2,9 @@
   "name": "coverse-rules",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "run:publish": "bash ./tools/publish.sh"
+  },
   "private": true,
   "dependencies": {
     "tslib": "^2.3.0"

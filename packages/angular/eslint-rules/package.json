@@ -1,6 +1,6 @@
 {
   "name": "@coverse-tech/angular-eslint",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Package with common eslint rules for a scalable and clean angular source code",
   "author": {
     "name": "Coverse Tech",

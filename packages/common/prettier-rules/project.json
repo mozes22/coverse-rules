@@ -5,7 +5,6 @@
   "projectType": "library",
   "release": {
     "projects": ["packages/*"],
-    "projectsRelationship": "independent",
     "releaseTagPattern": "@coverse-tech/{projectRoot}/{version}",
     "changelog": {
       "projectChangelogs": true
