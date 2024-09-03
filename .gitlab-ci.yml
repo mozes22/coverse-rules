@@ -30,8 +30,8 @@ release_angular_eslint_rules:
     - setup
   script:
     - npx nx build angular-eslint-rules
-    - npm run release
-    - npm publish
+    - npx nx run angular-eslint-rules:release
+    - npx nx run angular-eslint-rules:publish
   only:
     - main
 # release_common_prettier_rules:

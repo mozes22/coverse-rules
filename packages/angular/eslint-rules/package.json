@@ -15,7 +15,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "release": "semantic-release --extends ./release.config.js"
+    "release": "semantic-release --extends ./release.config.js",
+    "publish": "npm publish"
   },
   "publishConfig": {
     "@coverse-tech:registry": "https://gitlab.com/api/v4/projects/61355522/packages/npm/"
