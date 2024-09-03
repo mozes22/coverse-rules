@@ -33,7 +33,6 @@
         "main": "packages/angular/eslint-rules/src/index.ts",
         "tsConfig": "packages/angular/eslint-rules/tsconfig.lib.json",
         "assets": ["packages/angular/eslint-rules/*.md"],
-        "generatePackageJson": true,
         "format": ["cjs"]
       }
     },

@@ -33,7 +33,6 @@
         "main": "packages/common/prettier-rules/src/index.ts",
         "tsConfig": "packages/common/prettier-rules/tsconfig.lib.json",
         "assets": ["packages/common/prettier-rules/*.md"],
-        "generatePackageJson": true,
         "format": ["cjs"]
       }
     },

@@ -33,7 +33,6 @@
         "main": "packages/common/stylelint-rules/src/index.ts",
         "tsConfig": "packages/common/stylelint-rules/tsconfig.lib.json",
         "assets": ["packages/common/stylelint-rules/*.md"],
-        "generatePackageJson": true,
         "format": ["cjs"]
       }
     },
