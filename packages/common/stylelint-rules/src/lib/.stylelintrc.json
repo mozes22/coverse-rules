@@ -1,0 +1,51 @@
+{
+	"ignoreFiles": ["**/global.scss", "**/tailwind.scss"],
+	"extends": ["stylelint-config-standard-scss", "stylelint-config-standard"],
+	"plugins": ["stylelint-scss"],
+	"rules": {
+		"at-rule-no-unknown": null,
+		"function-no-unknown": [
+			true,
+			{
+				"ignoreFunctions": [
+					"map-get",
+					"map-merge",
+					"light-dark",
+					"linear",
+					"xywh",
+					"fade",
+					"fadeout",
+					"tint",
+					"darken",
+					"ceil",
+					"fadein",
+					"floor",
+					"unit",
+					"shade",
+					"lighten",
+					"percentage"
+				]
+			}
+		],
+		"selector-class-pattern": null,
+		"custom-property-pattern": null,
+		"no-empty-source": null,
+		"import-notation": null,
+		"number-max-precision": 8,
+		"color-function-notation": "legacy",
+		"alpha-value-notation": "number",
+		"scss/at-rule-no-unknown": null,
+		"scss/dollar-variable-pattern": null,
+		"scss/selector-no-redundant-nesting-selector": true,
+		"no-invalid-position-at-import-rule": null,
+		"selector-pseudo-element-no-unknown": [
+			true,
+			{
+				"ignorePseudoElements": ["ng-deep", "/^input-/"]
+			}
+		],
+		"no-descending-specificity": null,
+		"declaration-empty-line-before": null,
+		"at-rule-empty-line-before": null
+	}
+}

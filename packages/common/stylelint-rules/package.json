@@ -1,0 +1,34 @@
+{
+  "name": "@coverse-tech/stylelint",
+  "version": "0.0.1",
+  "description": "Package with common stylelint rules for a scalable and structure styles",
+  "author": {
+    "name": "Coverse Tech",
+    "email": "chadi.osseiran@coverse-technologies.com",
+    "url": "https://www.coverse-technologies.com/"
+  },
+  "contributors": [
+    {
+      "name": "Coverse Technologies",
+      "url": "https://gitlab.com/coverse-tech"
+    }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "release": "semantic-release --extends ./release.config.js"
+  },
+  "publishConfig": {
+    "@coverse-tech:registry": "https://gitlab.com/api/v4/projects/58183541/packages/npm/"
+  },
+  "dependencies": {
+    "stylelint": "^16.8.2",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-scss": "^6.5.0"
+  },
+  "devDependencies": {
+    "semantic-release": "^24.1.0"
+  },
+  "type": "commonjs",
+  "main": "./index.cjs"
+}

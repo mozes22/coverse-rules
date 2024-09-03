@@ -1,0 +1,50 @@
+{
+  "name": "@coverse-tech/angular-eslint",
+  "version": "0.0.1",
+  "description": "Package with common eslint rules for a scalable and clean angular source code",
+  "author": {
+    "name": "Coverse Tech",
+    "email": "chadi.osseiran@coverse-technologies.com",
+    "url": "https://www.coverse-technologies.com/"
+  },
+  "contributors": [
+    {
+      "name": "Coverse Technologies",
+      "url": "https://gitlab.com/coverse-tech"
+    }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "release": "semantic-release --extends ./release.config.js"
+  },
+  "publishConfig": {
+    "@coverse-tech:registry": "https://gitlab.com/api/v4/projects/58183541/packages/npm/"
+  },
+  "dependencies": {
+    "@angular-eslint/eslint-plugin": "^18.3.0",
+    "@angular-eslint/eslint-plugin-template": "^18.3.0",
+    "@angular-eslint/template-parser": "^18.3.0",
+    "@babel/eslint-parser": "^7.25.1",
+    "@stylistic/eslint-plugin-ts": "^2.3.0",
+    "@typescript-eslint/eslint-plugin": "7.16.0",
+    "@typescript-eslint/parser": "7.16.0",
+    "@typescript-eslint/utils": "7.16.0",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-cypress": "^2.13.4",
+    "eslint-plugin-deprecation": "^3.0.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-playwright": "^0.15.3",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-rxjs": "^5.0.3",
+    "eslint-plugin-storybook": "^0.8.0",
+    "eslint-plugin-unused-imports": "^3.2.0",
+    "jsonc-eslint-parser": "^2.4.0"
+  },
+  "devDependencies": {
+    "semantic-release": "^24.1.0"
+  },
+  "type": "commonjs",
+  "main": "./index.cjs"
+}

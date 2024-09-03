@@ -1,0 +1,52 @@
+stages:
+  - release
+  - setup
+
+variables:
+  CI: 'true'
+
+default:
+  interruptible: true
+  image: node:20.13-slim
+  before_script:
+    - export "PATH=$PNPM_HOME:$PATH"
+    - npm install -g nx pnpm
+    - echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/packages/npm/" > .npmrc
+    - echo "${CI_API_V4_URL#https?}/packages/npm/:_authToken=\${GITLAB_TOKEN}" > .npmrc
+    - echo "${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=\${GITLAB_TOKEN}" > .npmrc
+
+cache:
+  paths:
+    - node_modules/
+
+setup:
+  stage: setup
+  script:
+    - npm ci
+
+release_angular_eslint_rules:
+  stage: release
+  needs: ['setup']
+  script:
+    - npx nx build angular-eslint-rules
+    - cd dist/packages/angular/eslint-rules && npm run release
+  only:
+    - main
+
+release_common_prettier_rules:
+  stage: release
+  needs: ['setup']
+  script:
+    - npx nx build common-prettier-rules
+    - cd dist/packages/common/prettier-rules && npm run release
+  only:
+    - main
+
+release_common_stylelint_rules:
+  stage: release
+  needs: ['setup']
+  script:
+    - npx nx build common-stylelint-rules
+    - cd dist/packages/common/stylelint-rules && npm run release
+  only:
+    - main
