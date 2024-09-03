@@ -26,30 +26,32 @@ setup:
 
 release_angular_eslint_rules:
   stage: release
-  needs: 
+  needs:
     - setup
   script:
     - npx nx build angular-eslint-rules
-    - cd dist/packages/angular/eslint-rules && npm run release
+    - npm run release
+    - npm publish
   only:
     - main
+# release_common_prettier_rules:
+#   stage: release
+#   needs:
+#     - setup
+#   script:
+#     - npx nx build common-prettier-rules
+#     - npm run release
+#     - npm publish
+#   only:
+#     - main
 
-release_common_prettier_rules:
-  stage: release
-  needs: 
-    - setup
-  script:
-    - npx nx build common-prettier-rules
-    - cd dist/packages/common/prettier-rules && npm run release
-  only:
-    - main
-
-release_common_stylelint_rules:
-  stage: release
-  needs: 
-    - setup
-  script:
-    - npx nx build common-stylelint-rules
-    - cd dist/packages/common/stylelint-rules && npm run release
-  only:
-    - main
+# release_common_stylelint_rules:
+#   stage: release
+#   needs:
+#     - setup
+#   script:
+#     - npx nx build common-stylelint-rules
+#     - npm run release
+#     - npm publish
+#   only:
+#     - main

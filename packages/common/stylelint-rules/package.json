@@ -18,7 +18,7 @@
     "release": "semantic-release --extends ./release.config.js"
   },
   "publishConfig": {
-    "@coverse-tech:registry": "https://gitlab.com/api/v4/projects/58183541/packages/npm/"
+    "@coverse-tech:registry": "https://gitlab.com/api/v4/projects/61355522/packages/npm/"
   },
   "dependencies": {
     "stylelint": "^16.8.2",

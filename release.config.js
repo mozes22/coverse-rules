@@ -1,5 +1,6 @@
 module.exports = {
   branches: ['main'],
+  repositoryUrl: 'https://gitlab.com/coverse-tech/coverse-rules.git',
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
