@@ -38,7 +38,8 @@
     },
     "nx-release-publish": {
       "options": {
-        "packageRoot": "dist/{projectRoot}"
+        "packageRoot": "dist/{projectRoot}",
+        "registry": "https://gitlab.com/api/v4/packages/npm/"
       }
     }
   }

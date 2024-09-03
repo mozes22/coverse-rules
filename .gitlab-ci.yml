@@ -24,31 +24,12 @@ setup:
   script:
     - npm ci
 
-release_angular_eslint_rules:
+release:
   stage: release
   needs:
     - setup
   script:
-    - npx nx build angular-eslint-rules
-    - npx nx run angular-eslint-rules:nx-release-publish
+    - npx nx affected -t build
+    - npx nx release --skip-publish
   only:
     - main
-# release_common_prettier_rules:
-#   stage: release
-#   needs:
-#     - setup
-#   script:
-#     - npx nx build common-prettier-rules
-#     - npx nx run common-prettier-rules:nx-release-publish
-#   only:
-#     - main
-
-# release_common_stylelint_rules:
-#   stage: release
-#   needs:
-#     - setup
-#   script:
-#     - npx nx build common-stylelint-rules
-#     - npx nx run common-stylelint-rules:nx-release-publish
-#   only:
-#     - main
