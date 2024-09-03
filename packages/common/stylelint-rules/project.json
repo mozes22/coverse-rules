@@ -4,11 +4,22 @@
   "sourceRoot": "packages/common/stylelint-rules/src",
   "projectType": "library",
   "release": {
+    "projects": ["packages/*"],
+    "projectsRelationship": "independent",
+    "releaseTagPattern": "@coverse-tech/{projectRoot}/v{version}",
+    "changelog": {
+      "projectChangelogs": true
+    },
     "version": {
       "generatorOptions": {
         "packageRoot": "dist/{projectRoot}",
         "currentVersionResolver": "git-tag"
-      }
+      },
+      "conventionalCommits": true
+    },
+    "git": {
+      "commit": true,
+      "tag": true
     }
   },
   "tags": [],
@@ -26,6 +37,7 @@
       }
     },
     "nx-release-publish": {
+      "dependsOn": ["build"],
       "options": {
         "packageRoot": "dist/{projectRoot}"
       }

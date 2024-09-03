@@ -14,13 +14,6 @@
     }
   ],
   "license": "MIT",
-  "scripts": {
-    "release": "semantic-release --extends ./release.config.js",
-    "publish": "npm publish"
-  },
-  "publishConfig": {
-    "@coverse-tech:registry": "https://gitlab.com/api/v4/projects/61355522/packages/npm/"
-  },
   "dependencies": {
     "@angular-eslint/eslint-plugin": "^18.3.0",
     "@angular-eslint/eslint-plugin-template": "^18.3.0",
@@ -42,9 +35,6 @@
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-unused-imports": "^3.2.0",
     "jsonc-eslint-parser": "^2.4.0"
-  },
-  "devDependencies": {
-    "semantic-release": "^24.1.0"
   },
   "type": "commonjs",
   "main": "./index.cjs"

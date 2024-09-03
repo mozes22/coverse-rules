@@ -30,8 +30,7 @@ release_angular_eslint_rules:
     - setup
   script:
     - npx nx build angular-eslint-rules
-    - npx nx run angular-eslint-rules:release
-    - npx nx run angular-eslint-rules:publish
+    - npx nx run angular-eslint-rules:nx-release-publish
   only:
     - main
 # release_common_prettier_rules:
@@ -40,8 +39,7 @@ release_angular_eslint_rules:
 #     - setup
 #   script:
 #     - npx nx build common-prettier-rules
-#     - npm run release
-#     - npm publish
+#     - npx nx run common-prettier-rules:nx-release-publish
 #   only:
 #     - main
 
@@ -51,7 +49,6 @@ release_angular_eslint_rules:
 #     - setup
 #   script:
 #     - npx nx build common-stylelint-rules
-#     - npm run release
-#     - npm publish
+#     - npx nx run common-stylelint-rules:nx-release-publish
 #   only:
 #     - main
