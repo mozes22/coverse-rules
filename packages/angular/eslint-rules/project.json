@@ -13,7 +13,8 @@
     "version": {
       "generatorOptions": {
         "packageRoot": "dist/{projectRoot}",
-        "currentVersionResolver": "git-tag"
+        "currentVersionResolver": "git-tag",
+        "fallbackCurrentVersionResolver": "disk"
       },
       "conventionalCommits": true
     },
@@ -37,9 +38,9 @@
       }
     },
     "nx-release-publish": {
+      "dependsOn": ["build"],
       "options": {
-        "packageRoot": "dist/{projectRoot}",
-        "registry": "https://gitlab.com/api/v4/packages/npm/"
+        "packageRoot": "dist/{projectRoot}"
       }
     }
   }
