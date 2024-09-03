@@ -6,7 +6,7 @@
   "release": {
     "projects": ["packages/*"],
     "projectsRelationship": "independent",
-    "releaseTagPattern": "@coverse-tech/{projectRoot}/v{version}",
+    "releaseTagPattern": "@coverse-tech/{projectRoot}/{version}",
     "changelog": {
       "projectChangelogs": true
     },
