@@ -3,6 +3,7 @@
   "tabWidth": 4,
   "endOfLine": "auto",
   "singleQuote": true,
+  "useTabs": true,
   "overrides": [
     {
       "files": "*.ts",
