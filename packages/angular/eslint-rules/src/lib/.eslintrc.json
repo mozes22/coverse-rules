@@ -16,8 +16,6 @@
         ".npm",
         ".eslintcache",
         ".yarn-integrity",
-        ".env",
-        ".env.test",
         ".cache/",
         ".yarn",
         ".angular/",

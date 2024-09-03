@@ -14,6 +14,24 @@ default:
     - echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/packages/npm/" > .npmrc
     - echo "${CI_API_V4_URL#https?}/packages/npm/:_authToken=\${GITLAB_TOKEN}" >> .npmrc
     - echo "${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=\${GITLAB_TOKEN}" >> .npmrc
+    - |
+      if [ "$CI_COMMIT_REF_NAME" = "main" ]; then
+              export NX_BRANCH=$CI_COMMIT_REF_NAME
+              export BASE_SHA=$(git rev-parse HEAD~1)
+            else
+              export NX_BRANCH=$CI_COMMIT_REF_NAME
+              if [ -z "$CI_MERGE_REQUEST_TARGET_BRANCH_NAME" ]; then
+                if [ "$CI_COMMIT_REF_NAME" != "dev" ]; then
+                  echo "Direct push to branch $CI_COMMIT_REF_NAME is not allowed. Exiting."
+                  exit 1
+                fi
+                export TARGET_BRANCH=main
+                export BASE_SHA=$(git rev-parse HEAD~1)
+              else
+                export TARGET_BRANCH=$(echo $CI_MERGE_REQUEST_TARGET_BRANCH_NAME | sed 's/refs\/heads\///')
+                export BASE_SHA=$(git merge-base origin/$TARGET_BRANCH HEAD)
+              fi
+            fi
 
 cache:
   paths:
@@ -29,7 +47,7 @@ release:
   needs:
     - setup
   script:
-    - npx nx affected -t build
+    - npx nx affected --base=$BASE_SHA --head=$HEAD_SHA -t build --parallel=3
     - npx nx release --skip-publish
   only:
     - main
