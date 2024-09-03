@@ -45,7 +45,6 @@
       }
     ],
     "no-descending-specificity": null,
-    "declaration-empty-line-before": null,
-    "at-rule-empty-line-before": null
+    "declaration-empty-line-before": null
   }
 }
