@@ -1,6 +1,6 @@
 {
   "name": "@coverse-tech/prettier",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "Package with common prettier rule(s) for a scalable and formatted source code",
   "author": {
     "name": "Coverse Tech",
