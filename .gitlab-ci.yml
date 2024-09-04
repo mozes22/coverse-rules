@@ -42,6 +42,8 @@ setup:
   script:
     - npm install
     - npx nx report
+  only:
+    - tags
 
 release:
   stage: release

@@ -1,2 +1,3 @@
-import eslintrc  from './lib/.eslintrc.json';
+import eslintrc from './lib/.eslintrc.json';
+/* Expose the eslintrc config */
 module.exports = eslintrc;
