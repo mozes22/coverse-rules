@@ -3,6 +3,9 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/common/prettier-rules/src",
   "projectType": "library",
+  "release": {
+    "releaseTagPattern": "@coverse-tech/{projectRoot}/{version}"
+  },
   "tags": [],
   "targets": {
     "build": {
