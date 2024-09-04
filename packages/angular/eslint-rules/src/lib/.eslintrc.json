@@ -786,22 +786,6 @@
             "env": {
                 "es6": true
             }
-        },
-        {
-            "files": [
-                "*.ts",
-                "*.tsx"
-            ],
-            "rules": {}
-        },
-        {
-            "files": [
-                "*.ts",
-                "*.tsx",
-                "*.js",
-                "*.jsx"
-            ],
-            "rules": {}
         }
     ]
 }

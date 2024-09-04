@@ -11,8 +11,8 @@ default:
   before_script:
     - apt-get update && apt-get install -y git
     - npm install -g nx
-    - echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/packages/npm/" > .npmrc
-    - echo "${CI_API_V4_URL#https?}/packages/npm/:_authToken=${GITLAB_TOKEN}" >> .npmrc
+    - echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
+    - echo "${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${GITLAB_TOKEN}" >> .npmrc
 
 cache:
   paths:
