@@ -47,7 +47,6 @@ release:
   needs:
     - setup
   script:
-    - npx nx affected --base=$BASE_SHA --head=$HEAD_SHA -t build --parallel=3
     - npx nx run-many --target=nx-release-publish --all=true
   only:
     - main
