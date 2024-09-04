@@ -12,7 +12,9 @@ default:
     - apt-get update && apt-get install -y git
     - npm install -g nx
     - echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
-    - echo "//${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${GITLAB_TOKEN}" >> .npmrc
+    - echo "//${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_auth=${GITLAB_TOKEN}" >> .npmrc
+    - echo "NPM Configuration:"
+    - npm config ls
 
 cache:
   paths:
@@ -31,6 +33,8 @@ release:
   needs:
     - setup
   script:
+    - echo "NPM Configuration before publishing:"
+    - npm config ls
     - npx nx release publish
   only:
     - tags
