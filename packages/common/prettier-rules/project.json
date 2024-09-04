@@ -3,25 +3,6 @@
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/common/prettier-rules/src",
   "projectType": "library",
-  "release": {
-    "projects": ["packages/*"],
-    "releaseTagPattern": "@coverse-tech/{projectRoot}/{version}",
-    "changelog": {
-      "projectChangelogs": true
-    },
-    "version": {
-      "generatorOptions": {
-        "packageRoot": "dist/{projectRoot}",
-        "currentVersionResolver": "git-tag",
-        "fallbackCurrentVersionResolver": "disk"
-      },
-      "conventionalCommits": true
-    },
-    "git": {
-      "commit": true,
-      "tag": true
-    }
-  },
   "tags": [],
   "targets": {
     "build": {

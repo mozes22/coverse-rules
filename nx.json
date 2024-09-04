@@ -18,8 +18,26 @@
     }
   },
   "release": {
+    "releaseTagPattern": "@coverse-tech/{projectRoot}/{version}",
+    "changelog": {
+      "projectChangelogs": true
+    },
     "version": {
-      "preVersionCommand": "npx nx run-many -t build"
+      "preVersionCommand": "npx nx run-many -t build",
+      "conventionalCommits": true
+    },
+    "git": {
+      "commit": true,
+      "tag": true
+    },
+    "groups": {
+      "__default__": {
+        "projects": [
+          "angular-eslint-rules",
+          "common-prettier-rules",
+          "common-stylelint-rules"
+        ]
+      }
     }
   },
   "plugins": [
