@@ -1,7 +1,7 @@
 {
   "name": "@coverse-tech/stylelint",
   "version": "1.0.0",
-  "description": "Package with common stylelint rules for a scalable and structure styles",
+  "description": "Package with common stylelint rule(s) for a scalable and structure styles",
   "author": {
     "name": "Coverse Tech",
     "email": "chadi.osseiran@coverse-technologies.com",
