@@ -14,7 +14,7 @@ default:
     - npm install -g npm-cli-login
     - echo "@${CI_PROJECT_ROOT_NAMESPACE}:registry=${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/" > .npmrc
     - echo "${CI_API_V4_URL#https?}/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${GITLAB_TOKEN}" >> .npmrc
-    - npm-cli-login -u coversedev -p $GITLAB_TOKEN -r ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/
+    - npm-cli-login -u coversedev -p $GITLAB_TOKEN -e coversedev@gmail.com -r ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/npm/
     - echo "NPM Configuration:"
     - npm config ls
 
