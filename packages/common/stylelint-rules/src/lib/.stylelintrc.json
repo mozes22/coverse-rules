@@ -1,5 +1,5 @@
 {
-  "ignoreFiles": ["**/global.scss", "**/tailwind.scss"],
+  "ignoreFiles": ["**/global.scss", "**/tailwind.scss", "**/styles.scss"],
   "extends": ["stylelint-config-standard-scss", "stylelint-config-standard"],
   "plugins": ["stylelint-scss"],
   "rules": {

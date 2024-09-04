@@ -1,0 +1,9 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Echo to confirm the post-merge hook is running
+echo "Running post-merge hook..."
+# Run the sync script after merge or pull
+npm run sync
+# Echo to confirm the post-merge hook is running
+echo "Completed post-merge hook 🚀"
