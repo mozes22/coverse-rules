@@ -40,7 +40,7 @@ cache:
 setup:
   stage: setup
   script:
-    - npm ci
+    - npm install
     - npx nx report
 
 release:
