@@ -4,7 +4,7 @@
   "sourceRoot": "packages/angular/eslint-rules/src",
   "projectType": "library",
   "release": {
-    "releaseTagPattern": "@coverse-tech/{projectRoot}/{version}"
+    "releaseTagPattern": "@coverse-tech/{projectRoot}/v{version}"
   },
   "tags": [],
   "targets": {
