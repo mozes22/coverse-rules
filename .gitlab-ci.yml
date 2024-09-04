@@ -48,6 +48,6 @@ release:
     - setup
   script:
     - npx nx affected --base=$BASE_SHA --head=$HEAD_SHA -t build --parallel=3
-    - npx nx release
+    - npx nx run-many nx-release-publish
   only:
     - main
