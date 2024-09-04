@@ -31,7 +31,7 @@
     "custom-property-pattern": null,
     "no-empty-source": null,
     "import-notation": null,
-    "number-max-precision": 8,
+    "number-max-precision": 9,
     "color-function-notation": "legacy",
     "alpha-value-notation": "number",
     "scss/at-rule-no-unknown": null,

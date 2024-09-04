@@ -46,6 +46,13 @@
     "overrides": [
         {
             "files": [
+                "*.ts",
+                "*.tsx"
+            ],
+            "rules": {}
+        },
+        {
+            "files": [
                 "*.ts"
             ],
             "parserOptions": {
