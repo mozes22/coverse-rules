@@ -3,13 +3,14 @@
   "tabWidth": 4,
   "endOfLine": "auto",
   "singleQuote": true,
+  "bracketSpacing": true,
   "useTabs": true,
+  "plugins": ["prettier-plugin-tailwindcss"],
   "overrides": [
     {
       "files": "*.ts",
       "options": {
         "parser": "typescript",
-        "bracketSpacing": true,
         "trailingComma": "all",
         "printWidth": 150,
         "singleAttributePerLine": true
@@ -19,7 +20,6 @@
       "files": "*.component.ts",
       "options": {
         "parser": "typescript",
-        "bracketSpacing": true,
         "trailingComma": "all",
         "printWidth": 150,
         "singleAttributePerLine": true
@@ -30,7 +30,6 @@
       "excludeFiles": ["app.module.ts"],
       "options": {
         "parser": "typescript",
-        "bracketSpacing": true,
         "trailingComma": "all",
         "printWidth": 20,
         "singleAttributePerLine": true
@@ -43,7 +42,6 @@
         "htmlWhitespaceSensitivity": "ignore",
         "tabWidth": 2,
         "parser": "html",
-        "bracketSpacing": true,
         "singleQuote": true,
         "trailingComma": "none",
         "singleAttributePerLine": true,

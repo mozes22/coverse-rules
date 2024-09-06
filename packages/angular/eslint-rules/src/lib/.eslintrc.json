@@ -25,11 +25,18 @@
         ".husky/",
         ".github/"
     ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:tailwindcss/recommended",
+        "prettier"
+    ],
     "plugins": [
+        "@nx",
         "import",
         "unused-imports",
         "deprecation",
-        "@stylistic/ts"
+        "@stylistic/ts",
+        "@typescript-eslint"
     ],
     "rules": {
         "curly": "error",
@@ -65,8 +72,10 @@
             },
             "parser": "@typescript-eslint/parser",
             "extends": [
+                "plugin:@nx/typescript",
                 "plugin:@typescript-eslint/eslint-recommended",
                 "plugin:@typescript-eslint/recommended",
+                "plugin:@typescript-eslint/strict",
                 "plugin:@typescript-eslint/stylistic",
                 "plugin:@angular-eslint/recommended",
                 "plugin:@angular-eslint/template/process-inline-templates",
@@ -79,6 +88,15 @@
             "rules": {
                 "@angular-eslint/prefer-standalone": 2,
                 "@angular-eslint/prefer-on-push-component-change-detection": 1,
+                "tailwindcss/classnames-order": "warn",
+                "tailwindcss/no-custom-classname": [
+                    "warn",
+                    {
+                        "whitelist": [
+                            "(mat-|mdc-|cdk-|sc-|ion-|tw-).*"
+                        ]
+                    }
+                ],
                 "no-restricted-globals": [
                     "error",
                     "fit",
@@ -393,6 +411,137 @@
                         "format": null,
                         "modifiers": [
                             "requiresQuotes"
+                        ]
+                    },
+                    {
+                        "selector": "variableLike",
+                        "format": [
+                            "camelCase"
+                        ]
+                    },
+                    {
+                        "selector": "typeLike",
+                        "format": [
+                            "PascalCase"
+                        ]
+                    },
+                    {
+                        "selector": "classProperty",
+                        "format": [
+                            "strictCamelCase"
+                        ]
+                    },
+                    {
+                        "selector": "classProperty",
+                        "leadingUnderscore": "require",
+                        "modifiers": [
+                            "private"
+                        ],
+                        "format": [
+                            "strictCamelCase"
+                        ]
+                    },
+                    {
+                        "selector": "classProperty",
+                        "leadingUnderscore": "require",
+                        "modifiers": [
+                            "protected"
+                        ],
+                        "format": [
+                            "strictCamelCase"
+                        ]
+                    },
+                    {
+                        "selector": [
+                            "parameter",
+                            "classProperty"
+                        ],
+                        "types": [
+                            "boolean"
+                        ],
+                        "format": [
+                            "PascalCase"
+                        ],
+                        "prefix": [
+                            "is",
+                            "can",
+                            "did",
+                            "has",
+                            "will",
+                            "should",
+                            "was",
+                            "are",
+                            "does",
+                            "could",
+                            "may",
+                            "shall",
+                            "must",
+                            "had"
+                        ]
+                    },
+                    {
+                        "selector": "parameter",
+                        "leadingUnderscore": "allow",
+                        "format": [
+                            "camelCase"
+                        ]
+                    },
+                    {
+                        "selector": "variable",
+                        "leadingUnderscore": "allow",
+                        "format": [
+                            "strictCamelCase"
+                        ]
+                    },
+                    {
+                        "selector": "variable",
+                        "leadingUnderscore": "allow",
+                        "types": [
+                            "boolean"
+                        ],
+                        "format": [
+                            "PascalCase"
+                        ],
+                        "prefix": [
+                            "is",
+                            "can",
+                            "did",
+                            "has",
+                            "will",
+                            "should",
+                            "was",
+                            "are",
+                            "does",
+                            "could",
+                            "may",
+                            "shall",
+                            "must",
+                            "had"
+                        ]
+                    },
+                    {
+                        "selector": "variable",
+                        "modifiers": [
+                            "const"
+                        ],
+                        "format": [
+                            "UPPER_CASE",
+                            "camelCase"
+                        ]
+                    },
+                    {
+                        "format": null,
+                        "selector": "enumMember",
+                        "custom": {
+                            "match": true,
+                            "regex": "(^[A-Z][A-Za-z]*(?:_[A-Z][A-Za-z]*)*$)"
+                        }
+                    },
+                    {
+                        "selector": "typeProperty",
+                        "format": [
+                            "camelCase",
+                            "snake_case"
                         ]
                     },
                     {
@@ -743,6 +892,15 @@
                 "plugin:@angular-eslint/template/accessibility"
             ],
             "rules": {
+                "tailwindcss/classnames-order": "warn",
+                "tailwindcss/no-custom-classname": [
+                    "warn",
+                    {
+                        "whitelist": [
+                            "(mat-|mdc-|cdk-|sc-|ion-|tw-).*"
+                        ]
+                    }
+                ],
                 "max-lines": [
                     "error",
                     500
@@ -772,6 +930,31 @@
                     "error",
                     {
                         "max": 1
+                    }
+                ]
+            }
+        },
+        {
+            "files": [
+                "*.json"
+            ],
+            "extends": [
+                "plugin:import/errors",
+                "plugin:import/warnings",
+                "plugin:jsonc/recommended-with-json"
+            ],
+            "parser": "jsonc-eslint-parser",
+            "rules": {
+                "jsonc/key-name-casing": [
+                    "error",
+                    {
+                        "camelCase": true
+                    }
+                ],
+                "no-multiple-empty-lines": [
+                    "error",
+                    {
+                        "max": 0
                     }
                 ]
             }
