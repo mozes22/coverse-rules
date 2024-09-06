@@ -1,3 +1,15 @@
+## 1.1.1 (2024-09-06)
+
+
+### 🩹 Fixes
+
+- **core:** adjusted the export to fit the commonjs way
+
+
+### ❤️  Thank You
+
+- Coverse-Tech
+
 ## 1.1.0 (2024-09-06)
 
 
