@@ -32,7 +32,7 @@
         "parser": "typescript",
         "bracketSpacing": true,
         "trailingComma": "all",
-        "printWidth": 20,
+        "printWidth": 25,
         "singleAttributePerLine": true
       }
     },
