@@ -28,12 +28,19 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-playwright": "^0.15.3",
     "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-jest": "^28.6.0",
     "eslint-plugin-rxjs": "^5.0.3",
     "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-unused-imports": "^3.2.0",
     "jsonc-eslint-parser": "^2.4.0",
     "eslint-plugin-tailwindcss": "^3.17.4",
-    "prettier": "^3.3.3"
+    "eslint-plugin-jsonc": "^2.16.0",
+    "prettier": ">=3.3.3",
+    "@nx/eslint": ">=19.4.0",
+    "@nx/eslint-plugin": ">=19.4.0",
+    "@angular-eslint/eslint-plugin": ">=18.1.0",
+    "@angular-eslint/eslint-plugin-template": ">=18.1.0",
+    "@angular-eslint/template-parser": ">=18.1.0"
   },
   "type": "commonjs",
   "main": "./index.cjs"

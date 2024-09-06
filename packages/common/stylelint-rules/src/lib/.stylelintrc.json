@@ -14,12 +14,6 @@
     "scss/at-mixin-argumentless-call-parentheses": "always",
     "at-rule-no-unknown": null,
     "order/order": ["declarations", "custom-properties"],
-    "color-named": [
-      "never",
-      {
-        "message": "Use atomic color classes or SCSS variables instead of a bespoke color."
-      }
-    ],
     "keyframes-name-pattern": [
       "^[a-z]+(-[a-z]+)*$|^[a-z]+([A-Z][a-z]+)*$",
       {
@@ -50,6 +44,8 @@
         ]
       }
     ],
+    "declaration-property-unit-allowed-list": null,
+    "declaration-property-value-no-unknown": null,
     "selector-id-pattern": [
       "^[a-z]+[a-z0-9-_]*$",
       {
@@ -65,6 +61,7 @@
     "custom-property-pattern": null,
     "no-empty-source": null,
     "import-notation": null,
+    "color-named": null,
     "number-max-precision": 8,
     "color-function-notation": "legacy",
     "alpha-value-notation": "number",
@@ -78,40 +75,10 @@
         "ignorePseudoElements": ["ng-deep", "/^input-/"]
       }
     ],
-    "declaration-property-value-no-unknown": [
-      true,
-      {
-        "ignoreProperties": {
-          "font-family": "/,/",
-          "background": "/linear-gradient/"
-        }
-      }
-    ],
     "scss/dollar-variable-empty-line-before": [
       "always",
       {
         "ignore": ["after-comment"]
-      }
-    ],
-    "declaration-property-unit-allowed-list": [
-      {
-        "border-radius": ["px"],
-        "border-width": ["px"],
-        "box-shadow": ["px"],
-        "font-size": ["rem", "em", "clamp()"],
-        "width": ["em", "%", "vh", "px"],
-        "height": ["em", "%", "vh", "px"],
-        "/^padding/": ["rem", "px"],
-        "/^margin/": ["rem"],
-        "text-indent": ["em"],
-        "/border/": ["em", "px"],
-        "top": ["em", "%", "px"],
-        "left": ["em", "%", "px"],
-        "right": ["em", "%", "px"],
-        "bottom": ["em", "%", "px"]
-      },
-      {
-        "ignore": ["inside-function"]
       }
     ],
     "no-descending-specificity": null,
