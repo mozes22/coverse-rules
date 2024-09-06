@@ -945,12 +945,6 @@
             ],
             "parser": "jsonc-eslint-parser",
             "rules": {
-                "jsonc/key-name-casing": [
-                    "error",
-                    {
-                        "camelCase": true
-                    }
-                ],
                 "no-multiple-empty-lines": [
                     "error",
                     {
@@ -976,6 +970,9 @@
             "parser": "@babel/eslint-parser",
             "env": {
                 "es6": true
+            },
+            "rules": {
+                "no-undef": 0
             }
         }
     ]
