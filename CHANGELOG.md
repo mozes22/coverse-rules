@@ -1,3 +1,14 @@
+## 1.2.3 (2024-09-06)
+
+
+### 🩹 Fixes
+
+- **core:** updated eslint rules
+
+### ❤️  Thank You
+
+- Coverse-Tech
+
 ## 1.2.2 (2024-09-06)
 
 

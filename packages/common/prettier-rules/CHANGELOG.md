@@ -1,3 +1,7 @@
+## 1.2.3 (2024-09-06)
+
+This was a version bump only for common-prettier-rules to align it with other projects, there were no code changes.
+
 ## 1.2.2 (2024-09-06)
 
 This was a version bump only for common-prettier-rules to align it with other projects, there were no code changes.
