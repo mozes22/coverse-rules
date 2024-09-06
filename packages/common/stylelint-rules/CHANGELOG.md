@@ -1,3 +1,15 @@
+## 1.2.1 (2024-09-06)
+
+
+### 🩹 Fixes
+
+- **core:** updated eslint, prettier and stylelint rules and packges
+
+
+### ❤️  Thank You
+
+- Coverse-Tech
+
 ## 1.2.0 (2024-09-06)
 
 
