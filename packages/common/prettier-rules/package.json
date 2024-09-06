@@ -13,8 +13,12 @@
       "url": "https://gitlab.com/coverse-tech"
     }
   ],
+  "keywords": [
+    "prettier",
+    "prettier-config"
+  ],
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "prettier": "^3.3.3"
   },
   "type": "commonjs",

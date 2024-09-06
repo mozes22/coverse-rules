@@ -13,8 +13,12 @@
       "url": "https://gitlab.com/coverse-tech"
     }
   ],
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "stylelint": "^16.8.2",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-config-standard-scss": "^13.1.0",
