@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "sync": "git fetch --prune && git fetch --prune origin \"+refs/tags/*:refs/tags/*\"",
-    "release": "npm run sync && npx nx release && nx run-many nx-release-publish",
+    "release": "npm run sync && npx nx release && nx run-many --target=nx-release-publish --all=true",
     "prepare": "husky"
   },
   "private": true,
