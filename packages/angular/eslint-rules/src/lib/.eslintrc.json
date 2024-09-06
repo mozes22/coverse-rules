@@ -414,137 +414,6 @@
                         ]
                     },
                     {
-                        "selector": "variableLike",
-                        "format": [
-                            "camelCase"
-                        ]
-                    },
-                    {
-                        "selector": "typeLike",
-                        "format": [
-                            "PascalCase"
-                        ]
-                    },
-                    {
-                        "selector": "classProperty",
-                        "format": [
-                            "strictCamelCase"
-                        ]
-                    },
-                    {
-                        "selector": "classProperty",
-                        "leadingUnderscore": "require",
-                        "modifiers": [
-                            "private"
-                        ],
-                        "format": [
-                            "strictCamelCase"
-                        ]
-                    },
-                    {
-                        "selector": "classProperty",
-                        "leadingUnderscore": "require",
-                        "modifiers": [
-                            "protected"
-                        ],
-                        "format": [
-                            "strictCamelCase"
-                        ]
-                    },
-                    {
-                        "selector": [
-                            "parameter",
-                            "classProperty"
-                        ],
-                        "types": [
-                            "boolean"
-                        ],
-                        "format": [
-                            "PascalCase"
-                        ],
-                        "prefix": [
-                            "is",
-                            "can",
-                            "did",
-                            "has",
-                            "will",
-                            "should",
-                            "was",
-                            "are",
-                            "does",
-                            "could",
-                            "may",
-                            "shall",
-                            "must",
-                            "had"
-                        ]
-                    },
-                    {
-                        "selector": "parameter",
-                        "leadingUnderscore": "allow",
-                        "format": [
-                            "camelCase"
-                        ]
-                    },
-                    {
-                        "selector": "variable",
-                        "leadingUnderscore": "allow",
-                        "format": [
-                            "strictCamelCase"
-                        ]
-                    },
-                    {
-                        "selector": "variable",
-                        "leadingUnderscore": "allow",
-                        "types": [
-                            "boolean"
-                        ],
-                        "format": [
-                            "PascalCase"
-                        ],
-                        "prefix": [
-                            "is",
-                            "can",
-                            "did",
-                            "has",
-                            "will",
-                            "should",
-                            "was",
-                            "are",
-                            "does",
-                            "could",
-                            "may",
-                            "shall",
-                            "must",
-                            "had"
-                        ]
-                    },
-                    {
-                        "selector": "variable",
-                        "modifiers": [
-                            "const"
-                        ],
-                        "format": [
-                            "UPPER_CASE",
-                            "camelCase"
-                        ]
-                    },
-                    {
-                        "format": null,
-                        "selector": "enumMember",
-                        "custom": {
-                            "match": true,
-                            "regex": "(^[A-Z][A-Za-z]*(?:_[A-Z][A-Za-z]*)*$)"
-                        }
-                    },
-                    {
-                        "selector": "typeProperty",
-                        "format": [
-                            "camelCase",
-                            "snake_case"
-                        ]
-                    },
-                    {
                         "selector": "memberLike",
                         "modifiers": [
                             "private"
@@ -775,6 +644,10 @@
                 "import/no-deprecated": "off",
                 "import/newline-after-import": "error",
                 "import/named": "error",
+                "@typescript-eslint/no-dynamic-delete": "warn",
+                "@typescript-eslint/no-extraneous-class": "warn",
+                "@typescript-eslint/no-invalid-void-type": "warn",
+                "@typescript-eslint/prefer-literal-enum-member": "warn",
                 "import/no-unresolved": [
                     "error"
                 ],
