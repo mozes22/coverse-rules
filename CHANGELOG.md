@@ -1,3 +1,14 @@
+## 1.3.0 (2024-09-08)
+
+
+### 🚀 Features
+
+- **core:** added eslint typescript dep check and rule
+
+### ❤️  Thank You
+
+- Coverse-Tech
+
 ## 1.2.3 (2024-09-06)
 
 
