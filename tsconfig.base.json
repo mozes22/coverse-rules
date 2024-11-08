@@ -12,7 +12,10 @@
     "esModuleInterop": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -20,11 +23,22 @@
       "@coverse-tech/angular-eslint": [
         "packages/angular/eslint-rules/src/index.ts"
       ],
-      "@coverse-tech/prettier": ["packages/prettier-rules/src/index.ts"],
+      "@coverse-tech/nodejs-eslint": [
+        "packages/nodejs/eslint-rules/src/index.ts"
+      ],
+      "@coverse-tech/nestjs-eslint": [
+        "packages/nestjs/eslint-rules/src/index.ts"
+      ],
+      "@coverse-tech/prettier": [
+        "packages/prettier-rules/src/index.ts"
+      ],
       "@coverse-tech/stylelint": [
         "packages/common/stylelint-rules/src/index.ts"
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

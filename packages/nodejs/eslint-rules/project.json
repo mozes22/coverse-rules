@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-eslint-rules",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nodejs/eslint-rules/src",
+  "projectType": "library",
+  "release": {
+    "releaseTagPattern": "@coverse-tech/{projectRoot}/v{version}"
+  },
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nodejs/eslint-rules",
+        "main": "packages/nodejs/eslint-rules/src/index.ts",
+        "tsConfig": "packages/nodejs/eslint-rules/tsconfig.lib.json",
+        "assets": ["packages/nodejs/eslint-rules/*.md"],
+        "format": ["cjs"]
+      }
+    },
+    "nx-release-publish": {
+      "dependsOn": ["build"],
+      "options": {
+        "packageRoot": "dist/{projectRoot}"
+      }
+    }
+  }
+}
