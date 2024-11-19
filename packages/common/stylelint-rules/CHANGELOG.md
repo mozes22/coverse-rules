@@ -1,3 +1,13 @@
+## 1.4.4 (2024-11-19)
+
+### 🩹 Fixes
+
+- **core:** updated packages compatibility with angular 19
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.3 (2024-11-19)
 
 ### 🩹 Fixes
