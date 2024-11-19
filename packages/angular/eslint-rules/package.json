@@ -34,8 +34,8 @@
     "jsonc-eslint-parser": "2.4.0"
   },
   "type": "commonjs",
-  "main": "./dist/index.js",
-  "typings": "./dist/index.d.ts",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
   "files": [
     "dist",
     "!**/*.tsbuildinfo"
