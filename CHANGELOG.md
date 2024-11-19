@@ -1,3 +1,13 @@
+## 1.4.1 (2024-11-19)
+
+### 🩹 Fixes
+
+- **core:** fixed package.json dist issue
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.0 (2024-11-19)
 
 ### 🚀 Features
