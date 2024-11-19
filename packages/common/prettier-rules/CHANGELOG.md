@@ -1,3 +1,13 @@
+## 1.4.2 (2024-11-19)
+
+### 🩹 Fixes
+
+- **core:** fixed package.json dist issue
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.1 (2024-11-19)
 
 This was a version bump only for common-prettier-rules to align it with other projects, there were no code changes.
