@@ -1,3 +1,14 @@
+## 1.4.3 (2024-11-19)
+
+### 🩹 Fixes
+
+- **core:** removed custom rules for now
+- **core:** removed custom rules for now
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.2 (2024-11-19)
 
 ### 🩹 Fixes
