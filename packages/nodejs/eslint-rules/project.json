@@ -13,7 +13,7 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/nodejs/eslint-rules",
-        "main": "packages/nodejs/eslint-rules/src/index.js",
+        "main": "packages/nodejs/eslint-rules/src/index.ts",
         "tsConfig": "packages/nodejs/eslint-rules/tsconfig.lib.json",
         "assets": ["packages/nodejs/eslint-rules/*.md"],
         "format": ["cjs"]
