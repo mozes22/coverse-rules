@@ -1,3 +1,16 @@
+## 1.4.0 (2024-11-19)
+
+### 🚀 Features
+
+- **core:** added nestjs and nodejs packages for eslint rules
+- **core:** migrated to eslint 9 across
+- **core:** adjusted pnpm command
+- **core:** adjusted pnpm command
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.3.0 (2024-09-08)
 
 

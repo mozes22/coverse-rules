@@ -1,3 +1,14 @@
+## 1.4.0 (2024-11-19)
+
+### 🚀 Features
+
+- **core:** adjusted pnpm command
+- **core:** migrated to eslint 9 across
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.3.0 (2024-09-08)
 
 This was a version bump only for common-prettier-rules to align it with other projects, there were no code changes.
