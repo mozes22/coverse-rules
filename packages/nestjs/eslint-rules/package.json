@@ -29,13 +29,9 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "@nx/eslint-plugin": ">=20.1.2",
     "@eslint/js": "9.15.0",
-    "jsonc-eslint-parser": "2.4.0"
+    "jsonc-eslint-parser": "2.4.0",
+    "@coverse-tech/custom-eslint-rules": "workspace:*"
   },
   "type": "commonjs",
-  "main": "./src/index.js",
-  "typings": "./src/index.d.ts",
-  "files": [
-    "dist",
-    "!**/*.tsbuildinfo"
-  ]
+  "main": "./index.cjs"
 }
