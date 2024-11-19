@@ -2,29 +2,49 @@
   "compileOnSave": false,
   "compilerOptions": {
     "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "resolveJsonModule": true,
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "emitDecoratorMetadata": false,
     "esModuleInterop": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "experimentalDecorators": false,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "lib": ["es2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "noEmitOnError": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "removeComments": false,
+    "resolveJsonModule": false,
+    "skipDefaultLibCheck": false,
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "target": "es2022",
+    "verbatimModuleSyntax": false,
     "baseUrl": ".",
     "paths": {
       "@coverse-tech/angular-eslint": [
-        "packages/angular/eslint-rules/src/index.ts"
+        "packages/angular/eslint-rules/src/index.js"
+      ],
+      "@coverse-tech/custom-eslint-rules": [
+        "lib/custom-eslint-rules/src/index.js"
       ],
       "@coverse-tech/nestjs-eslint": [
-        "packages/nestjs/eslint-rules/src/index.ts"
+        "packages/nestjs/eslint-rules/src/index.js"
       ],
       "@coverse-tech/nodejs-eslint": [
-        "packages/nodejs/eslint-rules/src/index.ts"
+        "packages/nodejs/eslint-rules/src/index.js"
       ],
       "@coverse-tech/prettier": ["packages/prettier-rules/src/index.ts"],
       "@coverse-tech/stylelint": [
