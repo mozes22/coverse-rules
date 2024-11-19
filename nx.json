@@ -27,7 +27,7 @@
       "projectChangelogs": true
     },
     "version": {
-      "preVersionCommand": "npx nx run-many -t build",
+      "preVersionCommand": "pnpm dlx nx run-many -t build",
       "conventionalCommits": true
     },
     "git": {
