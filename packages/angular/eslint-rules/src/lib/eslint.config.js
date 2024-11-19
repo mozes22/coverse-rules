@@ -1,4 +1,3 @@
-const customEslintRules = require('@coverse-tech/custom-eslint-rules');
 const nodePlugin = require('eslint-plugin-n');
 const jsdoc = require('eslint-plugin-jsdoc');
 const babelParser = require('@babel/eslint-parser');
@@ -110,7 +109,6 @@ module.exports = tseslint.config(
       import: importPlugin,
       jest: jestPlugin,
       n: nodePlugin,
-      '@coverse-tech/custom-eslint-rules': customEslintRules,
       '@stylistic/ts': stylisticPlugin,
       'rxjs-x': rxjsPlugin,
     },
@@ -127,10 +125,6 @@ module.exports = tseslint.config(
       'n/no-extraneous-import': 'warn',
       '@stylistic/ts/indent': 'off',
       '@stylistic/ts/quote-props': 'off',
-      '@coverse-tech/custom-eslint-rules/empty-else': 'error',
-      '@coverse-tech/custom-eslint-rules/empty-catch': 'error',
-      '@coverse-tech/custom-eslint-rules/consecutive-comments': 'error',
-      '@coverse-tech/custom-eslint-rules/empty-finally': 'error',
       '@angular-eslint/prefer-standalone': 2,
       '@angular-eslint/prefer-on-push-component-change-detection': 1,
       'tailwindcss/classnames-order': 'warn',
@@ -641,13 +635,9 @@ module.exports = tseslint.config(
   },
   {
     files: ['*.html'],
-    plugins: {
-      '@coverse-tech/custom-eslint-rules': customEslintRules,
-    },
     rules: {
       ...angular.configs.templateRecommended.rules,
       ...angular.configs.templateAccessibility.rules,
-      '@coverse-tech/custom-eslint-rules/html-multiline-comments': 'error',
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/no-custom-classname': [
         'warn',

@@ -1,4 +1,3 @@
-const customEslintRules = require('@coverse-tech/custom-eslint-rules');
 const nodePlugin = require('eslint-plugin-n');
 const jsdoc = require('eslint-plugin-jsdoc');
 const babelParser = require('@babel/eslint-parser');
@@ -104,7 +103,6 @@ module.exports = tseslint.config(
       import: importPlugin,
       jest: jestPlugin,
       n: nodePlugin,
-      '@coverse-tech/custom-eslint-rules': customEslintRules,
       '@stylistic/ts': stylisticPlugin,
     },
     rules: {
@@ -119,10 +117,6 @@ module.exports = tseslint.config(
       'n/no-extraneous-import': 'warn',
       '@stylistic/ts/indent': 'off',
       '@stylistic/ts/quote-props': 'off',
-      '@coverse-tech/custom-eslint-rules/empty-else': 'error',
-      '@coverse-tech/custom-eslint-rules/empty-catch': 'error',
-      '@coverse-tech/custom-eslint-rules/consecutive-comments': 'error',
-      '@coverse-tech/custom-eslint-rules/empty-finally': 'error',
       'no-restricted-globals': [
         'error',
         'fit',
