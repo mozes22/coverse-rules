@@ -90,9 +90,6 @@ importers:
       htmlparser2:
         specifier: ^9.1.0
         version: 9.1.0
-      tslib:
-        specifier: ^2.3.0
-        version: 2.8.1
 
   packages/angular/eslint-rules:
     dependencies:
