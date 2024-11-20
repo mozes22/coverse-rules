@@ -121,7 +121,6 @@ module.exports = tseslint.config(
       '@stylistic/ts': stylisticPlugin,
     },
     rules: {
-      ...rxjsPlugin.configs.recommended.rules,
       ...stylisticPlugin.configs['all-flat'].rules,
       ...nodePlugin.configs['flat/recommended-script'].rules,
       ...eslint.configs.recommended.rules,

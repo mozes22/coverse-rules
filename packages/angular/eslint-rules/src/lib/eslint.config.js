@@ -704,9 +704,8 @@ module.exports = tseslint.config(
       jsonc: jsoncPlugin,
     },
     rules: {
-      /** HACK: Turned `off` dep check since its not always working and causing issues on lint fix */
       '@nx/dependency-checks': [
-        'off',
+        'error',
         {
           ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'],
         },

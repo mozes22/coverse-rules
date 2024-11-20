@@ -2,7 +2,7 @@
   "semi": true,
   "tabWidth": 4,
   "endOfLine": "auto",
-  "singleQuote": true,
+  "singleQuote": false,
   "bracketSpacing": true,
   "useTabs": true,
   "plugins": ["prettier-plugin-tailwindcss"],
@@ -51,8 +51,7 @@
     {
       "files": ["*.scss"],
       "options": {
-        "parser": "scss",
-        "singleQuote": false
+        "parser": "scss"
       }
     },
     {
