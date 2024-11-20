@@ -1,3 +1,13 @@
+## 1.4.7 (2024-11-20)
+
+### 🩹 Fixes
+
+- **core:** added prettier rules to align with stylistic eslint rules. turned off some rules
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.6 (2024-11-20)
 
 This was a version bump only for common-prettier-rules to align it with other projects, there were no code changes.

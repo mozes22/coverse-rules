@@ -1,3 +1,7 @@
+## 1.4.7 (2024-11-20)
+
+This was a version bump only for common-stylelint-rules to align it with other projects, there were no code changes.
+
 ## 1.4.6 (2024-11-20)
 
 This was a version bump only for common-stylelint-rules to align it with other projects, there were no code changes.
