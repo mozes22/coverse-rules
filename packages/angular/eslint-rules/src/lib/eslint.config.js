@@ -16,6 +16,7 @@ const eslint = require('@eslint/js');
 const markdown = require('eslint-plugin-markdown');
 const mdx = require('eslint-plugin-mdx');
 
+/** Global Rules */
 module.exports = tseslint.config(
   ...nxPlugin.configs['flat/base'],
   ...nxPlugin.configs['flat/typescript'],
