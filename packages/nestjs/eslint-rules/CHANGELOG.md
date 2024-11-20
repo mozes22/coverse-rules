@@ -1,3 +1,13 @@
+## 1.4.8 (2024-11-20)
+
+### 🩹 Fixes
+
+- **core:** turned off stylistic rule to align with prettier so both format the same way
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.7 (2024-11-20)
 
 ### 🩹 Fixes
