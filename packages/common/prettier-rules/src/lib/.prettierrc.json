@@ -1,10 +1,10 @@
 {
   "semi": true,
-  "tabWidth": 4,
-  "endOfLine": "auto",
+  "tabWidth": 2,
+  "endOfLine": "lf",
   "singleQuote": false,
   "bracketSpacing": true,
-  "useTabs": true,
+  "useTabs": false,
   "plugins": ["prettier-plugin-tailwindcss"],
   "overrides": [
     {
@@ -12,7 +12,8 @@
       "options": {
         "parser": "typescript",
         "trailingComma": "all",
-        "printWidth": 150,
+        "singleQuote": false,
+        "printWidth": 100,
         "singleAttributePerLine": true
       }
     },
@@ -21,7 +22,8 @@
       "options": {
         "parser": "typescript",
         "trailingComma": "all",
-        "printWidth": 150,
+        "singleQuote": false,
+        "printWidth": 100,
         "singleAttributePerLine": true
       }
     },
@@ -31,7 +33,8 @@
       "options": {
         "parser": "typescript",
         "trailingComma": "all",
-        "printWidth": 20,
+        "singleQuote": false,
+        "printWidth": 100,
         "singleAttributePerLine": true
       }
     },
@@ -42,29 +45,32 @@
         "htmlWhitespaceSensitivity": "ignore",
         "tabWidth": 2,
         "parser": "html",
-        "singleQuote": true,
+        "singleQuote": false,
         "trailingComma": "none",
         "singleAttributePerLine": true,
-        "printWidth": 150
+        "printWidth": 100
       }
     },
     {
       "files": ["*.scss"],
       "options": {
-        "parser": "scss"
+        "parser": "scss",
+        "singleQuote": false
       }
     },
     {
       "files": "*.mjs",
       "options": {
-        "printWidth": 150
+        "printWidth": 100,
+        "singleQuote": false
       }
     },
     {
       "files": "*.js",
       "options": {
         "parser": "flow",
-        "printWidth": 150
+        "printWidth": 100,
+        "singleQuote": false
       }
     }
   ]

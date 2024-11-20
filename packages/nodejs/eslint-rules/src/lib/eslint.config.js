@@ -131,6 +131,8 @@ module.exports = tseslint.config(
       '@stylistic/ts/object-curly-spacing': 'off',
       '@stylistic/ts/indent': 'off',
       '@stylistic/ts/quote-props': 'off',
+      '@stylistic/ts/space-before-function-paren': 'off',
+      '@stylistic/ts/object-property-newline': 'off',
       'n/no-extraneous-import': 'warn',
       'n/no-missing-import': 'off',
       'n/no-unsupported-features/es-builtins': [
