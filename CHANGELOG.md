@@ -1,3 +1,13 @@
+## 1.4.9 (2024-11-20)
+
+### 🩹 Fixes
+
+- **core:** cleaned up eslint for nest and node
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.8 (2024-11-20)
 
 ### 🩹 Fixes

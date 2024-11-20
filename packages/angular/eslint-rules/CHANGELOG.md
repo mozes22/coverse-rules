@@ -1,3 +1,7 @@
+## 1.4.9 (2024-11-20)
+
+This was a version bump only for angular-eslint-rules to align it with other projects, there were no code changes.
+
 ## 1.4.8 (2024-11-20)
 
 ### 🩹 Fixes
