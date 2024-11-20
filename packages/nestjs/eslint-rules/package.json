@@ -1,6 +1,6 @@
 {
   "name": "@coverse-tech/nestjs-eslint",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "Package with common eslint rule(s) for a scalable and clean Nest.Js source code",
   "author": {
     "name": "Coverse Tech",
