@@ -30,4 +30,14 @@ module.exports = [
     // Override or add rules here
     rules: {},
   },
+  {
+    files: ['**/*.json'],
+    rules: {
+      /** HACK: Turned `off` dep check since its not always working and causing issues on lint fix */
+      '@nx/dependency-checks': 'off',
+    },
+    languageOptions: {
+      parser: require('jsonc-eslint-parser'),
+    },
+  },
 ];

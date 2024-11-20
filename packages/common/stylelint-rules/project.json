@@ -24,6 +24,16 @@
       "options": {
         "packageRoot": "dist/{projectRoot}"
       }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/common/stylelint-rules/src/lib/**/*.{ts,tsx,js,jsx}",
+          "packages/common/stylelint-rules/package.json"
+        ]
+      }
     }
   }
 }

@@ -18,7 +18,9 @@
     "prettier-config"
   ],
   "license": "MIT",
-  "peerDependencies": {},
+  "peerDependencies": {
+    "prettier-plugin-tailwindcss": ">=0.6.9"
+  },
   "type": "commonjs",
   "main": "./index.cjs"
 }

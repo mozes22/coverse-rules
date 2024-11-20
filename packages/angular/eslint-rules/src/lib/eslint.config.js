@@ -11,17 +11,19 @@ const stylisticPlugin = require('@stylistic/eslint-plugin-ts');
 const tseslint = require('typescript-eslint');
 const tailwindcssPlugin = require('eslint-plugin-tailwindcss');
 const nxPlugin = require('@nx/eslint-plugin');
-const importPlugin = require('eslint-plugin-import');
+const importPlugin = require('eslint-plugin-import-x');
 const eslint = require('@eslint/js');
 const markdown = require('eslint-plugin-markdown');
+const mdx = require('eslint-plugin-mdx');
 
 module.exports = tseslint.config(
   ...nxPlugin.configs['flat/base'],
   ...nxPlugin.configs['flat/typescript'],
   ...nxPlugin.configs['flat/javascript'],
-  ...tailwindcssPlugin.configs['flat/recommended'],
   {
     ignores: [
+      'eslint.config.js',
+      'eslint.config.mjs',
       '.env-cmdrc.json',
       '.commitlintrc.json',
       'package.json',
@@ -73,23 +75,33 @@ module.exports = tseslint.config(
           skipTemplates: true,
         },
       ],
+      '@typescript-eslint/no-unused-expressions': [
+        'error',
+        {
+          allowShortCircuit: true,
+          allowTernary: true,
+        },
+      ],
+      '@typescript-eslint/no-empty-function': [
+        'error',
+        {
+          allow: ['arrowFunctions', 'constructors'],
+        },
+      ],
     },
   },
   eslintConfigPrettier,
-  tseslint.configs.eslintRecommended,
-  ...tseslint.configs.strictTypeChecked.map((config) => ({
+  ...tseslint.configs.strict.map((config) => ({
     ...config,
     files: ['**/*.ts'],
   })),
-  ...tseslint.configs.stylisticTypeChecked.map((config) => ({
+  tseslint.configs.eslintRecommended,
+  ...tseslint.configs.stylistic.map((config) => ({
     ...config,
     files: ['**/*.ts'],
   })),
   ...angular.configs.tsRecommended,
-  {
-    files: ['*.ts', '*.tsx', '*.js', '*.jsx'],
-    rules: {},
-  },
+  importPlugin.flatConfigs.typescript,
   {
     files: ['**/*.ts'],
     languageOptions: {
@@ -106,13 +118,14 @@ module.exports = tseslint.config(
     plugins: {
       'unused-imports': unusedImportsPlugin,
       '@typescript-eslint': tseslint.plugin,
-      import: importPlugin,
-      jest: jestPlugin,
+      'import-x': importPlugin,
       n: nodePlugin,
       '@stylistic/ts': stylisticPlugin,
       'rxjs-x': rxjsPlugin,
+      tailwindcss: tailwindcssPlugin,
     },
     rules: {
+      ...tailwindcssPlugin.configs['flat/recommended'].rules,
       ...rxjsPlugin.configs.recommended.rules,
       ...stylisticPlugin.configs['all-flat'].rules,
       ...nodePlugin.configs['flat/recommended-script'].rules,
@@ -121,19 +134,32 @@ module.exports = tseslint.config(
       ...importPlugin.configs.errors.rules,
       ...importPlugin.configs.warnings.rules,
       '@stylistic/ts/object-curly-spacing': 'off',
-      'n/no-missing-import': 'warn',
-      'n/no-extraneous-import': 'warn',
       '@stylistic/ts/indent': 'off',
       '@stylistic/ts/quote-props': 'off',
+      'n/no-extraneous-import': 'warn',
+      'n/no-missing-import': 'off',
+      'n/no-unsupported-features/es-builtins': [
+        'warn',
+        {
+          ignores: [],
+        },
+      ],
+      'n/no-unsupported-features/es-syntax': [
+        'warn',
+        {
+          ignores: [],
+        },
+      ],
+      'n/no-unsupported-features/node-builtins': [
+        'warn',
+        {
+          ignores: [],
+        },
+      ],
       '@angular-eslint/prefer-standalone': 2,
       '@angular-eslint/prefer-on-push-component-change-detection': 1,
       'tailwindcss/classnames-order': 'warn',
-      'tailwindcss/no-custom-classname': [
-        'warn',
-        {
-          whitelist: ['(mat-|mdc-|cdk-|sc-|ion-|tw-).*'],
-        },
-      ],
+      'tailwindcss/no-custom-classname': 'off',
       'no-restricted-globals': [
         'error',
         'fit',
@@ -194,10 +220,11 @@ module.exports = tseslint.config(
       curly: ['error'],
       eqeqeq: 'error',
       'grouped-accessor-pairs': ['error', 'getBeforeSet'],
-      'import/no-absolute-path': ['error'],
-      'import/no-useless-path-segments': ['error'],
+      'import-x/no-absolute-path': ['error'],
+      'import-x/no-useless-path-segments': ['error'],
       '@typescript-eslint/no-deprecated': 'warn',
       'no-debugger': 'warn',
+      '@stylistic/ts/lines-around-comment': 'off',
       '@stylistic/ts/padding-line-between-statements': [
         'error',
         {
@@ -295,6 +322,8 @@ module.exports = tseslint.config(
         },
       ],
       'no-unused-vars': 'off',
+      'no-unused-expressions': 'off',
+      'no-shadow': 'off',
       'no-async-promise-executor': 'error',
       'no-await-in-loop': 'error',
       'no-promise-executor-return': 'error',
@@ -333,20 +362,7 @@ module.exports = tseslint.config(
           allowConciseArrowFunctionExpressionsStartingWithVoid: true,
         },
       ],
-      '@typescript-eslint/no-empty-function': [
-        'error',
-        {
-          allow: ['arrowFunctions', 'constructors'],
-        },
-      ],
-      '@typescript-eslint/no-unused-expressions': [
-        'error',
-        {
-          allowShortCircuit: true,
-          allowTernary: true,
-        },
-      ],
-      '@typescript-eslint/member-delimiter-style': [
+      '@stylistic/ts/member-delimiter-style': [
         'off',
         {
           multiline: {
@@ -398,8 +414,13 @@ module.exports = tseslint.config(
       '@typescript-eslint/no-unused-vars': [
         'error',
         {
-          argsIgnorePattern: '^_',
           args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
         },
       ],
       '@typescript-eslint/no-require-imports': 'error',
@@ -513,7 +534,7 @@ module.exports = tseslint.config(
           exceptAfterSingleLine: true,
         },
       ],
-      'import/order': [
+      'import-x/order': [
         'error',
         {
           alphabetize: {
@@ -544,15 +565,15 @@ module.exports = tseslint.config(
         },
       ],
       'unused-imports/no-unused-imports': 'error',
-      'import/first': 'error',
-      'import/no-deprecated': 'off',
-      'import/newline-after-import': 'error',
-      'import/named': 'error',
+      'import-x/first': 'error',
+      'import-x/no-deprecated': 'off',
+      'import-x/newline-after-import': 'error',
+      'import-x/named': 'error',
       '@typescript-eslint/no-dynamic-delete': 'warn',
       '@typescript-eslint/no-extraneous-class': 'warn',
       '@typescript-eslint/no-invalid-void-type': 'warn',
       '@typescript-eslint/prefer-literal-enum-member': 'warn',
-      'import/no-unresolved': ['error'],
+      'import-x/no-unresolved': 'warn',
       'no-restricted-imports': [
         'error',
         {
@@ -586,23 +607,29 @@ module.exports = tseslint.config(
       'no-var': 'error',
     },
     settings: {
-      'import/extensions': ['.js', '.jsx', '.tsx', '.ts'],
-      'import/resolver': {
-        typescript: {
-          alwaysTryTypes: true,
-          project: './tsconfig.base.json',
-        },
+      node: {
+        version: '>=22.0.0',
       },
     },
   },
   {
-    files: ['*.spec.ts'],
+    files: ['**/*.spec.ts', '**/*.spec.js', '**/*.spec.js', '**/*.test.js'],
+    ...jestPlugin.configs['flat/recommended'],
+    plugins: { jest: jestPlugin },
+    languageOptions: {
+      globals: jestPlugin.environments.globals.globals,
+    },
     rules: {
       'max-nested-callbacks': 'off',
       'no-magic-numbers': 'off',
       'func-style': 'off',
       'id-length': 'off',
       'prefer-destructuring': 'off',
+      'jest/no-disabled-tests': 1,
+      'jest/no-focused-tests': 2,
+      'jest/no-identical-title': 2,
+      'jest/prefer-to-have-length': 1,
+      'jest/valid-expect': 2,
     },
   },
   {
@@ -614,7 +641,7 @@ module.exports = tseslint.config(
           max: 1,
         },
       ],
-      'import/order': [
+      'import-x/order': [
         'error',
         {
           'newlines-between': 'always',
@@ -622,12 +649,12 @@ module.exports = tseslint.config(
           pathGroups: [],
         },
       ],
-      'import/first': 'error',
-      'import/no-deprecated': 'off',
-      'import/newline-after-import': 'error',
-      'import/no-unresolved': 'off',
+      'import-x/first': 'error',
+      'import-x/no-deprecated': 'off',
+      'import-x/newline-after-import': 'error',
+      'import-x/no-unresolved': 'off',
       '@typescript-eslint/no-deprecated': 'warn',
-      'import/named': 'error',
+      'import-x/named': 'error',
       'unused-imports/no-unused-imports': 'error',
       'no-var': 'error',
       '@stylistic/ts/comma-dangle': ['error', 'always-multiline'],
@@ -635,16 +662,15 @@ module.exports = tseslint.config(
   },
   {
     files: ['*.html'],
+    plugins: {
+      tailwindcss: tailwindcssPlugin,
+    },
     rules: {
       ...angular.configs.templateRecommended.rules,
       ...angular.configs.templateAccessibility.rules,
+      ...tailwindcssPlugin.configs['flat/recommended'].rules,
       'tailwindcss/classnames-order': 'warn',
-      'tailwindcss/no-custom-classname': [
-        'warn',
-        {
-          whitelist: ['(mat-|mdc-|cdk-|sc-|ion-|tw-).*'],
-        },
-      ],
+      'tailwindcss/no-custom-classname': 'off',
       'max-lines': ['error', 500],
       '@angular-eslint/template/prefer-self-closing-tags': 2,
       '@angular-eslint/template/prefer-ngsrc': 2,
@@ -678,8 +704,9 @@ module.exports = tseslint.config(
       jsonc: jsoncPlugin,
     },
     rules: {
+      /** HACK: Turned `off` dep check since its not always working and causing issues on lint fix */
       '@nx/dependency-checks': [
-        'error',
+        'off',
         {
           ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'],
         },
@@ -717,14 +744,24 @@ module.exports = tseslint.config(
     },
   },
   {
-    files: ['test/**'],
-    ...jestPlugin.configs['flat/recommended'],
-  },
-  {
     files: ['**/*.md'],
     plugins: {
       markdown,
     },
     processor: 'markdown/markdown',
+  },
+  {
+    ...mdx.flat,
+    processor: mdx.createRemarkProcessor({
+      lintCodeBlocks: true,
+    }),
+  },
+  {
+    ...mdx.flatCodeBlocks,
+    rules: {
+      ...mdx.flatCodeBlocks.rules,
+      'no-var': 'error',
+      'prefer-const': 'error',
+    },
   },
 );

@@ -1,9 +1,4 @@
 {
-  "pluginsConfig": {
-    "@nx/js": {
-      "analyzeSourceFiles": true
-    }
-  },
   "extends": "nx/presets/npm.json",
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "defaultBase": "main",
@@ -39,9 +34,16 @@
         "projects": [
           "angular-eslint-rules",
           "common-prettier-rules",
-          "common-stylelint-rules"
+          "common-stylelint-rules",
+          "nestjs-eslint-rules",
+          "nodejs-eslint-rules"
         ]
       }
+    }
+  },
+  "pluginsConfig": {
+    "@nx/js": {
+      "analyzeSourceFiles": true
     }
   },
   "plugins": [
@@ -58,5 +60,7 @@
       }
     }
   ],
-  "useLegacyCache": true
+  "cli": {
+    "packageManager": "pnpm"
+  }
 }
