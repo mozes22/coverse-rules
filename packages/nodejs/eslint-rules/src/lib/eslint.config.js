@@ -4,7 +4,6 @@ const babelParser = require('@babel/eslint-parser');
 const jsoncPlugin = require('eslint-plugin-jsonc');
 const eslintConfigPrettier = require('eslint-config-prettier');
 const jestPlugin = require('eslint-plugin-jest');
-const angular = require('angular-eslint');
 const unusedImportsPlugin = require('eslint-plugin-unused-imports');
 const stylisticPlugin = require('@stylistic/eslint-plugin-ts');
 const tseslint = require('typescript-eslint');
@@ -36,7 +35,6 @@ module.exports = tseslint.config(
       'compodoc',
       'dist',
       'tmp',
-      '**/.angular/*',
       '**/.vscode/*',
       'docs/**/*',
       'scripts/',
@@ -57,7 +55,6 @@ module.exports = tseslint.config(
       '.env.test',
       '.cache/',
       '.yarn',
-      '.angular/',
       '.vscode/',
       '.stackblitz/',
       '.husky/',
@@ -99,7 +96,6 @@ module.exports = tseslint.config(
     ...config,
     files: ['**/*.ts'],
   })),
-  ...angular.configs.tsRecommended,
   importPlugin.flatConfigs.typescript,
   {
     files: ['**/*.ts'],
@@ -113,7 +109,6 @@ module.exports = tseslint.config(
         ecmaVersion: 'latest',
       },
     },
-    processor: angular.processInlineTemplates,
     plugins: {
       'unused-imports': unusedImportsPlugin,
       '@typescript-eslint': tseslint.plugin,
@@ -154,26 +149,7 @@ module.exports = tseslint.config(
           ignores: [],
         },
       ],
-      'no-restricted-globals': [
-        'error',
-        'fit',
-        'fdescribe',
-        {
-          name: 'window',
-          message:
-            "Avoid using the global `window` directly to ensure server-side rendering (SSR) compatibility. Instead, inject `WINDOW` into your class using `private _window = inject(WINDOW);`. Ensure you import `WINDOW` from '@ng-web-apis/common' with `import { WINDOW } from '@ng-web-apis/common';`.",
-        },
-        {
-          name: 'document',
-          message:
-            "Avoid using the global `document` directly to ensure server-side rendering (SSR) compatibility. Instead, inject `DOCUMENT` into your class using `private _document = inject(DOCUMENT);`. Ensure you import `DOCUMENT` from '@angular/common' with `import { DOCUMENT } from '@angular/common';`.",
-        },
-        {
-          name: 'navigator',
-          message:
-            "Avoid using the global `navigator` directly to ensure server-side rendering (SSR) compatibility. Instead, inject `NAVIGATOR` into your class using `private _navigator = inject(NAVIGATOR);`. Ensure you import `NAVIGATOR` from '@ng-web-apis/common' with `import { NAVIGATOR } from '@ng-web-apis/common';`.",
-        },
-      ],
+      'no-restricted-globals': ['error', 'fit', 'fdescribe'],
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@/no-throw-literal': 'error',
       '@stylistic/ts/comma-dangle': ['error', 'always-multiline'],
@@ -271,7 +247,20 @@ module.exports = tseslint.config(
         'error',
         {
           min: 3,
-          exceptions: ['_', 'i', 'j', 'x', 'y', 'id', 'PI', 'to'],
+          exceptions: [
+            '_',
+            'i',
+            'j',
+            'x',
+            'y',
+            'id',
+            'PI',
+            'to',
+            'in',
+            'lt',
+            'fs',
+            'OR',
+          ],
         },
       ],
       'no-empty-function': 'off',
@@ -578,6 +567,40 @@ module.exports = tseslint.config(
       'jest/no-identical-title': 2,
       'jest/prefer-to-have-length': 1,
       'jest/valid-expect': 2,
+    },
+  },
+  {
+    files: ['*.entity.ts'],
+    rules: {
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'objectLiteralProperty',
+          format: null,
+          modifiers: ['requiresQuotes'],
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['private'],
+          format: ['camelCase'],
+          leadingUnderscore: 'require',
+          trailingUnderscore: 'forbid',
+        },
+        {
+          selector: 'memberLike',
+          modifiers: ['public', 'protected'],
+          format: ['camelCase'],
+          leadingUnderscore: 'forbid',
+          trailingUnderscore: 'forbid',
+        },
+        {
+          selector: 'classMethod',
+          modifiers: ['public', 'protected'],
+          format: ['camelCase'],
+          leadingUnderscore: 'forbid',
+          trailingUnderscore: 'forbid',
+        },
+      ],
     },
   },
   {
