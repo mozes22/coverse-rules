@@ -1,3 +1,13 @@
+## 1.4.10 (2024-11-24)
+
+### 🩹 Fixes
+
+- **core:** added rules for extra parantheses
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.9 (2024-11-20)
 
 ### 🩹 Fixes
