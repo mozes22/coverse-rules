@@ -1,3 +1,17 @@
+## 1.5.0 (2025-01-22)
+
+### 🚀 Features
+
+- **core:** adjusted prettierrc to actually be common across, removed tailwind dependency
+
+### 🩹 Fixes
+
+- **chore:** dep update
+
+### ❤️  Thank You
+
+- Coverse Technologies
+
 ## 1.4.10 (2024-11-24)
 
 ### 🩹 Fixes
