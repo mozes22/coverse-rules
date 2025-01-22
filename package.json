@@ -40,5 +40,13 @@
   },
   "nx": {
     "includedScripts": []
-  }
+  },
+  "engines": {
+    "node": ">=22.12.0",
+    "pnpm": ">=9.15.3",
+    "npm": "Please use `pnpm` instead of **NPM** to install dependencies",
+    "yarn": "Please use `pnpm` instead of **YARN** to install dependencies"
+  },
+  "engineStrict": true,
+  "packageManager": "pnpm@9.15.3"
 }
