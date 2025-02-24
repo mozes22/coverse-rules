@@ -1,3 +1,4 @@
+const { Linter } = require('eslint');
 const nodePlugin = require('eslint-plugin-n');
 const jsdoc = require('eslint-plugin-jsdoc');
 const babelParser = require('@babel/eslint-parser');
@@ -13,10 +14,10 @@ const importPlugin = require('eslint-plugin-import-x');
 const eslint = require('@eslint/js');
 const markdown = require('eslint-plugin-markdown');
 const mdx = require('eslint-plugin-mdx');
-// const darraghor = require("@darraghor/nestjs-typed/recommended");
+const darraghor = require('@darraghor/nestjs-typed/recommended');
 
-/** Global Eslint Rules */
-module.exports = tseslint.config(
+/** @type {Linter.Config} */
+const config = tseslint.config(
   ...nxPlugin.configs['flat/base'],
   ...nxPlugin.configs['flat/typescript'],
   ...nxPlugin.configs['flat/javascript'],
@@ -119,7 +120,7 @@ module.exports = tseslint.config(
       n: nodePlugin,
       '@stylistic/ts': stylisticPlugin,
       'rxjs-x': rxjsPlugin,
-      //   '@darraghor/nestjs-typed': darraghor,
+      '@darraghor/nestjs-typed': darraghor,
     },
     rules: {
       ...rxjsPlugin.configs.recommended.rules,
@@ -159,7 +160,7 @@ module.exports = tseslint.config(
       'no-restricted-globals': ['error', 'fit', 'fdescribe'],
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@/no-throw-literal': 'error',
-      //   '@darraghor/nestjs-typed/injectable-should-be-provided': 'off',
+      '@darraghor/nestjs-typed/injectable-should-be-provided': 'off',
       'rxjs-x/no-unsafe-takeuntil': [
         'error',
         {
@@ -734,3 +735,5 @@ module.exports = tseslint.config(
     },
   }
 );
+
+module.exports = config;

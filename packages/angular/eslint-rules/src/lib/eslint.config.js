@@ -1,3 +1,4 @@
+const { Linter } = require('eslint');
 const nodePlugin = require('eslint-plugin-n');
 const jsdoc = require('eslint-plugin-jsdoc');
 const babelParser = require('@babel/eslint-parser');
@@ -16,8 +17,8 @@ const eslint = require('@eslint/js');
 const markdown = require('eslint-plugin-markdown');
 const mdx = require('eslint-plugin-mdx');
 
-/** Global Eslint Rules */
-module.exports = tseslint.config(
+/** @type {Linter.Config} */
+const config = tseslint.config(
   ...nxPlugin.configs['flat/base'],
   ...nxPlugin.configs['flat/typescript'],
   ...nxPlugin.configs['flat/javascript'],
@@ -770,3 +771,5 @@ module.exports = tseslint.config(
     },
   }
 );
+
+module.exports = config;
