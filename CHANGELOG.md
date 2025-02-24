@@ -1,3 +1,22 @@
+## 1.6.0 (2025-02-24)
+
+### 🚀 Features
+
+- **config:** add package manager version
+- **config:** updated main pckg json
+- **core:** updated packg dep and adjusted change in stylistic package due to major changes from v2 to v4
+
+### 🩹 Fixes
+
+- **config:** ran nx repair added migration files
+- **config:** updated eslint to add type for js eslint. re-added darraghor eslint package for nestjs since it has been updated. and the rule is needed
+- **config:** updated dep
+- **config:** added proper nestjs eslint validation rule, updated packg
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.5.0 (2025-01-22)
 
 ### 🚀 Features

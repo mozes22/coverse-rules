@@ -1,3 +1,7 @@
+## 1.6.0 (2025-02-24)
+
+This was a version bump only for common-prettier-rules to align it with other projects, there were no code changes.
+
 ## 1.5.0 (2025-01-22)
 
 ### 🚀 Features

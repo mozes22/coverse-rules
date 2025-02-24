@@ -1,3 +1,17 @@
+## 1.6.0 (2025-02-24)
+
+### 🚀 Features
+
+- **core:** updated packg dep and adjusted change in stylistic package due to major changes from v2 to v4
+
+### 🩹 Fixes
+
+- **config:** updated eslint to add type for js eslint. re-added darraghor eslint package for nestjs since it has been updated. and the rule is needed
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.5.0 (2025-01-22)
 
 ### 🩹 Fixes
