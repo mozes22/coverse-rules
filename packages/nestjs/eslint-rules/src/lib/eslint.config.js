@@ -14,7 +14,7 @@ const importPlugin = require('eslint-plugin-import-x');
 const eslint = require('@eslint/js');
 const markdown = require('eslint-plugin-markdown');
 const mdx = require('eslint-plugin-mdx');
-const darraghor = require('@darraghor/nestjs-typed/recommended');
+const eslintNestJs = require('@darraghor/eslint-plugin-nestjs-typed');
 
 /** @type {Linter.Config} */
 const config = tseslint.config(
@@ -91,6 +91,7 @@ const config = tseslint.config(
     },
   },
   eslintConfigPrettier,
+  eslintNestJs.configs.flatRecommended,
   ...tseslint.configs.strict.map((config) => ({
     ...config,
     files: ['**/*.ts'],
@@ -120,7 +121,7 @@ const config = tseslint.config(
       n: nodePlugin,
       '@stylistic/ts': stylisticPlugin,
       'rxjs-x': rxjsPlugin,
-      '@darraghor/nestjs-typed': darraghor,
+      '@darraghor/nestjs-typed': eslintNestJs,
     },
     rules: {
       ...rxjsPlugin.configs.recommended.rules,
@@ -733,7 +734,7 @@ const config = tseslint.config(
       'no-var': 'error',
       'prefer-const': 'error',
     },
-  }
+  },
 );
 
 module.exports = config;
