@@ -129,7 +129,7 @@ module.exports = tseslint.config(
     rules: {
       ...tailwindcssPlugin.configs['flat/recommended'].rules,
       ...rxjsPlugin.configs.recommended.rules,
-      ...stylisticPlugin.configs['all-flat'].rules,
+      ...stylisticPlugin.configs['flat/recommended'].rules,
       ...nodePlugin.configs['flat/recommended-script'].rules,
       ...eslint.configs.recommended.rules,
       ...importPlugin.flatConfigs.recommended.rules,
@@ -768,5 +768,5 @@ module.exports = tseslint.config(
       'no-var': 'error',
       'prefer-const': 'error',
     },
-  },
+  }
 );
