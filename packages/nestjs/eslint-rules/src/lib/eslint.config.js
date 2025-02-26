@@ -14,7 +14,7 @@ const importPlugin = require('eslint-plugin-import-x');
 const eslint = require('@eslint/js');
 const markdown = require('eslint-plugin-markdown');
 const mdx = require('eslint-plugin-mdx');
-const eslintNestJs = require('@darraghor/eslint-plugin-nestjs-typed');
+const eslintNestJs = require('@darraghor/eslint-plugin-nestjs-typed').default;
 
 /** @type {Linter.Config} */
 const config = tseslint.config(
@@ -91,7 +91,7 @@ const config = tseslint.config(
     },
   },
   eslintConfigPrettier,
-  eslintNestJs.configs['recommended'],
+  eslintNestJs.configs.flatRecommended,
   ...tseslint.configs.strict.map((config) => ({
     ...config,
     files: ['**/*.ts'],
