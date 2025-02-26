@@ -91,7 +91,7 @@ const config = tseslint.config(
     },
   },
   eslintConfigPrettier,
-  eslintNestJs.configs.flatRecommended,
+  eslintNestJs.configs['recommended'],
   ...tseslint.configs.strict.map((config) => ({
     ...config,
     files: ['**/*.ts'],
