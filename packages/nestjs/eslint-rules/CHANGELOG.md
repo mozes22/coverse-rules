@@ -1,3 +1,13 @@
+## 1.6.3 (2025-02-26)
+
+### 🩹 Fixes
+
+- **core:** updated eslint config issue for darraghor
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.6.2 (2025-02-26)
 
 ### 🩹 Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@coverse-tech/stylelint",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "Package with common stylelint rule(s) for a scalable and structure styles",
   "author": {
     "name": "Coverse Tech",
