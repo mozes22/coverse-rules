@@ -125,7 +125,7 @@ const config = tseslint.config(
     },
     rules: {
       ...rxjsPlugin.configs.recommended.rules,
-      ...stylisticPlugin.configs['flat/recommended'].rules,
+      ...stylisticPlugin.configs['all'].rules,
       ...nodePlugin.configs['flat/recommended-script'].rules,
       ...eslint.configs.recommended.rules,
       ...importPlugin.flatConfigs.recommended.rules,
@@ -682,7 +682,7 @@ const config = tseslint.config(
           ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'],
         },
       ],
-      ...jsoncPlugin.configs['recommended-with-json'].rules,
+      ...jsoncPlugin.configs['flat/recommended-with-jsonc'].rules,
       '@/no-multiple-empty-lines': [
         'error',
         {
