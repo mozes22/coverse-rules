@@ -1,3 +1,13 @@
+## 1.6.1 (2025-02-26)
+
+### 🩹 Fixes
+
+- **core:** adjusted eslint across minor fix for updated rules
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.6.0 (2025-02-24)
 
 ### 🚀 Features
