@@ -1,3 +1,7 @@
+## 1.6.2 (2025-02-26)
+
+This was a version bump only for nodejs-eslint-rules to align it with other projects, there were no code changes.
+
 ## 1.6.1 (2025-02-26)
 
 ### 🩹 Fixes

@@ -1,6 +1,6 @@
 {
   "name": "@coverse-tech/nodejs-eslint",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Package with common eslint rule(s) for a scalable and clean Node.Js source code",
   "author": {
     "name": "Coverse Tech",

@@ -1,3 +1,13 @@
+## 1.6.2 (2025-02-26)
+
+### 🩹 Fixes
+
+- **core:** updated nestjs eslint package rule for darraghor package
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.6.1 (2025-02-26)
 
 ### 🩹 Fixes
