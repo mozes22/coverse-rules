@@ -121,7 +121,6 @@ const config = tseslint.config(
       n: nodePlugin,
       '@stylistic/ts': stylisticPlugin,
       'rxjs-x': rxjsPlugin,
-      '@darraghor/nestjs-typed': eslintNestJs,
     },
     rules: {
       ...rxjsPlugin.configs.recommended.rules,
