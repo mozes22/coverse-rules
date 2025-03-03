@@ -1,3 +1,13 @@
+## 1.6.4 (2025-03-03)
+
+### 🩹 Fixes
+
+- **core:** update nestjs eslint darraghor for plugins
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.6.3 (2025-02-26)
 
 ### 🩹 Fixes
