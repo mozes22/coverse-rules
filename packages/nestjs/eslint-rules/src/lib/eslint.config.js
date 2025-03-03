@@ -91,7 +91,6 @@ const config = tseslint.config(
     },
   },
   eslintConfigPrettier,
-  eslintNestJs.configs.flatRecommended,
   ...tseslint.configs.strict.map((config) => ({
     ...config,
     files: ['**/*.ts'],
@@ -130,6 +129,7 @@ const config = tseslint.config(
       ...importPlugin.flatConfigs.recommended.rules,
       ...importPlugin.configs.errors.rules,
       ...importPlugin.configs.warnings.rules,
+      ...eslintNestJs.configs.flatRecommended.rules,
       '@stylistic/ts/no-extra-parens': 'off',
       '@stylistic/ts/object-curly-spacing': 'off',
       '@stylistic/ts/indent': 'off',
