@@ -1,4 +1,4 @@
 import stylelintrc from './lib/.stylelintrc.json';
 
-/* Expose the stylelint config */
+/* Expose the stylelintrc.json config */
 export = stylelintrc;
