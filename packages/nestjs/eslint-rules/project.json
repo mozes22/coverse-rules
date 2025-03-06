@@ -16,7 +16,12 @@
         "main": "packages/nestjs/eslint-rules/src/index.ts",
         "tsConfig": "packages/nestjs/eslint-rules/tsconfig.lib.json",
         "assets": ["packages/nestjs/eslint-rules/*.md"],
-        "format": ["esm"]
+        "format": ["esm"],
+        "esbuildOptions": {
+          "outExtension": {
+            ".js": ".mjs"
+          }
+        }
       }
     },
     "nx-release-publish": {

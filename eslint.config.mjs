@@ -1,9 +1,12 @@
-const nx = require('@nx/eslint-plugin');
+import nxEslint from '@nx/eslint-plugin';
+import jsoncEslintParser from 'jsonc-eslint-parser';
 
-module.exports = [
-  ...nx.configs['flat/base'],
-  ...nx.configs['flat/typescript'],
-  ...nx.configs['flat/javascript'],
+const { configs } = nxEslint;
+
+export default [
+  ...configs['flat/base'],
+  ...configs['flat/typescript'],
+  ...configs['flat/javascript'],
   {
     ignores: ['**/dist'],
   },
@@ -37,7 +40,7 @@ module.exports = [
       '@nx/dependency-checks': 'off',
     },
     languageOptions: {
-      parser: require('jsonc-eslint-parser'),
+      parser: jsoncEslintParser,
     },
   },
 ];

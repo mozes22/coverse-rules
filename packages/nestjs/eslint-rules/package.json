@@ -34,6 +34,10 @@
     "eslint-import-resolver-typescript": ">=3.8.3",
     "@darraghor/eslint-plugin-nestjs-typed": ">=6.2.5"
   },
-  "type": "commonjs",
-  "main": "./index.esm"
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  }
 }
