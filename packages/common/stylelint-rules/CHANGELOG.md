@@ -1,3 +1,13 @@
+## 1.7.1 (2025-03-06)
+
+### 🩹 Fixes
+
+- **core:** trigger patch
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.7.0 (2025-03-06)
 
 ### 🚀 Features

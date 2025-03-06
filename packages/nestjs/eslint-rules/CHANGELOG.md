@@ -1,3 +1,7 @@
+## 1.7.1 (2025-03-06)
+
+This was a version bump only for nestjs-eslint-rules to align it with other projects, there were no code changes.
+
 ## 1.7.0 (2025-03-06)
 
 ### 🚀 Features
