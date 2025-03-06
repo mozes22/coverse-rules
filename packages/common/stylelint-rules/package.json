@@ -28,5 +28,5 @@
     "stylelint-order": ">=6.0.4"
   },
   "type": "commonjs",
-  "main": "./index.esm"
+  "main": "./index.cjs"
 }

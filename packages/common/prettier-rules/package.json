@@ -19,5 +19,5 @@
   ],
   "license": "MIT",
   "type": "commonjs",
-  "main": "./index.esm"
+  "main": "./index.cjs"
 }
