@@ -1,3 +1,13 @@
+## 1.7.3 (2025-03-06)
+
+### 🩹 Fixes
+
+- **core:** adjusted exports object in package.json typo error
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.7.2 (2025-03-06)
 
 ### 🩹 Fixes

@@ -1,3 +1,7 @@
+## 1.7.3 (2025-03-06)
+
+This was a version bump only for common-stylelint-rules to align it with other projects, there were no code changes.
+
 ## 1.7.2 (2025-03-06)
 
 ### 🩹 Fixes
