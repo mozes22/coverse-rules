@@ -1,3 +1,13 @@
+## 1.7.0 (2025-03-06)
+
+### 🚀 Features
+
+- **core:** converted all eslint.config.js to .mjs and changed cjs to esm
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.6.5 (2025-03-03)
 
 This was a version bump only for nodejs-eslint-rules to align it with other projects, there were no code changes.
