@@ -1,2 +1,2 @@
-import eslintjs from './lib/eslint.config.js';
+import eslintjs from './lib/eslint.config.mjs';
 export = eslintjs;

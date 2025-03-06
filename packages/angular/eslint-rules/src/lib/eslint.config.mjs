@@ -1,27 +1,52 @@
-const { Linter } = require('eslint');
-const nodePlugin = require('eslint-plugin-n');
-const jsdoc = require('eslint-plugin-jsdoc');
-const babelParser = require('@babel/eslint-parser');
-const jsoncPlugin = require('eslint-plugin-jsonc');
-const eslintConfigPrettier = require('eslint-config-prettier');
-const jestPlugin = require('eslint-plugin-jest');
-const angular = require('angular-eslint');
-const rxjsPlugin = require('eslint-plugin-rxjs-x');
-const unusedImportsPlugin = require('eslint-plugin-unused-imports');
-const stylisticPlugin = require('@stylistic/eslint-plugin-ts');
-const tseslint = require('typescript-eslint');
-const tailwindcssPlugin = require('eslint-plugin-tailwindcss');
-const nxPlugin = require('@nx/eslint-plugin');
-const importPlugin = require('eslint-plugin-import-x');
-const eslint = require('@eslint/js');
-const markdown = require('eslint-plugin-markdown');
-const mdx = require('eslint-plugin-mdx');
+import eslint from 'eslint';
+import nodePlugin from 'eslint-plugin-n';
+import jsDocPkg from 'eslint-plugin-jsdoc';
+import babelParser from '@babel/eslint-parser';
+import jsoncPlugin from 'eslint-plugin-jsonc';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import jestPlugin from 'eslint-plugin-jest';
+import angularEslint from 'angular-eslint';
+import rxjsPlugin from 'eslint-plugin-rxjs-x';
+import unusedImportsPlugin from 'eslint-plugin-unused-imports';
+import stylisticPlugin from '@stylistic/eslint-plugin-ts';
+import typescriptEslint from 'typescript-eslint';
+import tailwindcssPlugin from 'eslint-plugin-tailwindcss';
+import nxEslintPlugin from '@nx/eslint-plugin';
+import importPlugin from 'eslint-plugin-import-x';
+import eslintJs from '@eslint/js';
+import markdown from 'eslint-plugin-markdown';
+import eslintPluginMdx from 'eslint-plugin-mdx';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import jsonParser from 'jsonc-eslint-parser';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const { configs: _configs } = jsDocPkg;
+const { configs: __configs } = jsoncPlugin;
+const { configs: ___configs, environments } = jestPlugin;
+const { configs: ____configs, processInlineTemplates } = angularEslint;
+const { configs: _____configs } = rxjsPlugin;
+const { configs: ______configs } = stylisticPlugin;
+const {
+  config: _config,
+  configs: _______configs,
+  parser: _parser,
+  plugin,
+} = typescriptEslint;
+const { configs: ________configs } = tailwindcssPlugin;
+const { configs: _________configs } = nxEslintPlugin;
+const { flatConfigs, configs: __________configs } = importPlugin;
+const { configs: ___________configs } = eslintJs;
+const { flat, createRemarkProcessor, flatCodeBlocks } = eslintPluginMdx;
+const { configs } = nodePlugin;
+const { Linter } = eslint;
 
 /** @type {Linter.Config} */
-const config = tseslint.config(
-  ...nxPlugin.configs['flat/base'],
-  ...nxPlugin.configs['flat/typescript'],
-  ...nxPlugin.configs['flat/javascript'],
+const config = _config(
+  ..._________configs['flat/base'],
+  ..._________configs['flat/typescript'],
+  ..._________configs['flat/javascript'],
   {
     ignores: [
       'eslint.config.js',
@@ -94,21 +119,21 @@ const config = tseslint.config(
     },
   },
   eslintConfigPrettier,
-  ...tseslint.configs.strict.map((config) => ({
+  ..._______configs.strict.map((config) => ({
     ...config,
     files: ['**/*.ts'],
   })),
-  tseslint.configs.eslintRecommended,
-  ...tseslint.configs.stylistic.map((config) => ({
+  _______configs.eslintRecommended,
+  ..._______configs.stylistic.map((config) => ({
     ...config,
     files: ['**/*.ts'],
   })),
-  ...angular.configs.tsRecommended,
-  importPlugin.flatConfigs.typescript,
+  ...____configs.tsRecommended,
+  flatConfigs.typescript,
   {
     files: ['**/*.ts'],
     languageOptions: {
-      parser: tseslint.parser,
+      parser: _parser,
       parserOptions: {
         projectService: true,
         tsconfigRootDir: __dirname,
@@ -117,10 +142,10 @@ const config = tseslint.config(
         ecmaVersion: 'latest',
       },
     },
-    processor: angular.processInlineTemplates,
+    processor: processInlineTemplates,
     plugins: {
       'unused-imports': unusedImportsPlugin,
-      '@typescript-eslint': tseslint.plugin,
+      '@typescript-eslint': plugin,
       'import-x': importPlugin,
       n: nodePlugin,
       '@stylistic/ts': stylisticPlugin,
@@ -128,14 +153,14 @@ const config = tseslint.config(
       tailwindcss: tailwindcssPlugin,
     },
     rules: {
-      ...tailwindcssPlugin.configs['flat/recommended'].rules,
-      ...rxjsPlugin.configs.recommended.rules,
-      ...stylisticPlugin.configs['all'].rules,
-      ...nodePlugin.configs['flat/recommended-script'].rules,
-      ...eslint.configs.recommended.rules,
-      ...importPlugin.flatConfigs.recommended.rules,
-      ...importPlugin.configs.errors.rules,
-      ...importPlugin.configs.warnings.rules,
+      ...________configs['flat/recommended'].rules,
+      ..._____configs.recommended.rules,
+      ...______configs['all'].rules,
+      ...configs['flat/recommended-script'].rules,
+      ...___________configs.recommended.rules,
+      ...flatConfigs.recommended.rules,
+      ...__________configs.errors.rules,
+      ...__________configs.warnings.rules,
       '@stylistic/ts/no-extra-parens': 'off',
       '@stylistic/ts/object-curly-spacing': 'off',
       '@stylistic/ts/indent': 'off',
@@ -621,10 +646,10 @@ const config = tseslint.config(
   },
   {
     files: ['**/*.spec.ts', '**/*.spec.js', '**/*.spec.js', '**/*.test.js'],
-    ...jestPlugin.configs['flat/recommended'],
+    ...___configs['flat/recommended'],
     plugins: { jest: jestPlugin },
     languageOptions: {
-      globals: jestPlugin.environments.globals.globals,
+      globals: environments.globals.globals,
     },
     rules: {
       'max-nested-callbacks': 'off',
@@ -673,9 +698,9 @@ const config = tseslint.config(
       tailwindcss: tailwindcssPlugin,
     },
     rules: {
-      ...angular.configs.templateRecommended.rules,
-      ...angular.configs.templateAccessibility.rules,
-      ...tailwindcssPlugin.configs['flat/recommended'].rules,
+      ...____configs.templateRecommended.rules,
+      ...____configs.templateAccessibility.rules,
+      ...________configs['flat/recommended'].rules,
       'tailwindcss/classnames-order': 'warn',
       'tailwindcss/no-custom-classname': 'off',
       'max-lines': ['error', 500],
@@ -687,8 +712,8 @@ const config = tseslint.config(
   {
     files: ['*.component.html'],
     rules: {
-      ...angular.configs.templateRecommended.rules,
-      ...angular.configs.templateAccessibility.rules,
+      ...____configs.templateRecommended.rules,
+      ...____configs.templateAccessibility.rules,
       '@/max-len': [
         'error',
         {
@@ -717,7 +742,7 @@ const config = tseslint.config(
           ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'],
         },
       ],
-      ...jsoncPlugin.configs['flat/recommended-with-jsonc'].rules,
+      ...__configs['flat/recommended-with-jsonc'].rules,
       '@/no-multiple-empty-lines': [
         'error',
         {
@@ -726,7 +751,7 @@ const config = tseslint.config(
       ],
     },
     languageOptions: {
-      parser: require('jsonc-eslint-parser'),
+      parser: jsonParser,
     },
   },
   {
@@ -741,11 +766,11 @@ const config = tseslint.config(
       },
     },
     plugins: {
-      jsdoc,
+      jsdoc: jsDocPkg,
     },
     rules: {
-      ...jsdoc.configs['flat/recommended'].rules,
-      ...tseslint.configs.disableTypeChecked.rules,
+      ..._configs['flat/recommended'].rules,
+      ..._______configs.disableTypeChecked.rules,
       'no-undef': 0,
     },
   },
@@ -757,19 +782,19 @@ const config = tseslint.config(
     processor: 'markdown/markdown',
   },
   {
-    ...mdx.flat,
-    processor: mdx.createRemarkProcessor({
+    ...flat,
+    processor: createRemarkProcessor({
       lintCodeBlocks: true,
     }),
   },
   {
-    ...mdx.flatCodeBlocks,
+    ...flatCodeBlocks,
     rules: {
-      ...mdx.flatCodeBlocks.rules,
+      ...flatCodeBlocks.rules,
       'no-var': 'error',
       'prefer-const': 'error',
     },
   },
 );
 
-module.exports = config;
+export default config;

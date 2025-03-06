@@ -1,26 +1,46 @@
-const { Linter } = require('eslint');
-const nodePlugin = require('eslint-plugin-n');
-const jsdoc = require('eslint-plugin-jsdoc');
-const babelParser = require('@babel/eslint-parser');
-const jsoncPlugin = require('eslint-plugin-jsonc');
-const eslintConfigPrettier = require('eslint-config-prettier');
-const jestPlugin = require('eslint-plugin-jest');
-const rxjsPlugin = require('eslint-plugin-rxjs-x');
-const unusedImportsPlugin = require('eslint-plugin-unused-imports');
-const stylisticPlugin = require('@stylistic/eslint-plugin-ts');
-const tseslint = require('typescript-eslint');
-const nxPlugin = require('@nx/eslint-plugin');
-const importPlugin = require('eslint-plugin-import-x');
-const eslint = require('@eslint/js');
-const markdown = require('eslint-plugin-markdown');
-const mdx = require('eslint-plugin-mdx');
-const eslintNestJs = require('@darraghor/eslint-plugin-nestjs-typed').default;
+import eslintPkg from 'eslint';
+import nodePluginPkg from 'eslint-plugin-n';
+import jsdocPluginPkg from 'eslint-plugin-jsdoc';
+import babelParser from '@babel/eslint-parser';
+import jsoncPluginPkg from 'eslint-plugin-jsonc';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import jestPluginPkg from 'eslint-plugin-jest';
+import unusedImportsPlugin from 'eslint-plugin-unused-imports';
+import stylisticPluginPkg from '@stylistic/eslint-plugin-ts';
+import typescriptEslintPkg from 'typescript-eslint';
+import nxEslintPluginPkg from '@nx/eslint-plugin';
+import importPluginPkg from 'eslint-plugin-import-x';
+import eslintJsPkg from '@eslint/js';
+import markdown from 'eslint-plugin-markdown';
+import mdxPluginPkg from 'eslint-plugin-mdx';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import jsonParser from 'jsonc-eslint-parser';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const { configs: ________configs } = eslintJsPkg;
+const { flatConfigs, configs: _______configs } = importPluginPkg;
+const { configs: ______configs } = nxEslintPluginPkg;
+const {
+  config: _config,
+  configs: _____configs,
+  parser: _parser,
+  plugin,
+} = typescriptEslintPkg;
+const { configs: ____configs } = stylisticPluginPkg;
+const { configs: ___configs, environments } = jestPluginPkg;
+const { configs: __configs } = jsoncPluginPkg;
+const { configs: _configs } = jsdocPluginPkg;
+const { configs } = nodePluginPkg;
+const { Linter } = eslintPkg;
+const { flat, createRemarkProcessor, flatCodeBlocks } = mdxPluginPkg;
 
 /** @type {Linter.Config} */
-const config = tseslint.config(
-  ...nxPlugin.configs['flat/base'],
-  ...nxPlugin.configs['flat/typescript'],
-  ...nxPlugin.configs['flat/javascript'],
+const config = _config(
+  ...______configs['flat/base'],
+  ...______configs['flat/typescript'],
+  ...______configs['flat/javascript'],
   {
     ignores: [
       'eslint.config.js',
@@ -91,20 +111,20 @@ const config = tseslint.config(
     },
   },
   eslintConfigPrettier,
-  ...tseslint.configs.strict.map((config) => ({
+  ..._____configs.strict.map((config) => ({
     ...config,
     files: ['**/*.ts'],
   })),
-  tseslint.configs.eslintRecommended,
-  ...tseslint.configs.stylistic.map((config) => ({
+  _____configs.eslintRecommended,
+  ..._____configs.stylistic.map((config) => ({
     ...config,
     files: ['**/*.ts'],
   })),
-  importPlugin.flatConfigs.typescript,
+  flatConfigs.typescript,
   {
     files: ['**/*.ts'],
     languageOptions: {
-      parser: tseslint.parser,
+      parser: _parser,
       parserOptions: {
         projectService: true,
         tsconfigRootDir: __dirname,
@@ -115,21 +135,18 @@ const config = tseslint.config(
     },
     plugins: {
       'unused-imports': unusedImportsPlugin,
-      '@typescript-eslint': tseslint.plugin,
-      'import-x': importPlugin,
-      n: nodePlugin,
-      '@stylistic/ts': stylisticPlugin,
-      'rxjs-x': rxjsPlugin,
+      '@typescript-eslint': plugin,
+      'import-x': importPluginPkg,
+      n: nodePluginPkg,
+      '@stylistic/ts': stylisticPluginPkg,
     },
     rules: {
-      ...rxjsPlugin.configs.recommended.rules,
-      ...stylisticPlugin.configs['all'].rules,
-      ...nodePlugin.configs['flat/recommended-script'].rules,
-      ...eslint.configs.recommended.rules,
-      ...importPlugin.flatConfigs.recommended.rules,
-      ...importPlugin.configs.errors.rules,
-      ...importPlugin.configs.warnings.rules,
-      ...eslintNestJs.configs.flatRecommended.rules,
+      ...____configs['all'].rules,
+      ...configs['flat/recommended-script'].rules,
+      ...________configs.recommended.rules,
+      ...flatConfigs.recommended.rules,
+      ..._______configs.errors.rules,
+      ..._______configs.warnings.rules,
       '@stylistic/ts/no-extra-parens': 'off',
       '@stylistic/ts/object-curly-spacing': 'off',
       '@stylistic/ts/indent': 'off',
@@ -160,35 +177,6 @@ const config = tseslint.config(
       'no-restricted-globals': ['error', 'fit', 'fdescribe'],
       '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
       '@/no-throw-literal': 'error',
-      '@darraghor/nestjs-typed/injectable-should-be-provided': 'off',
-      'rxjs-x/no-unsafe-takeuntil': [
-        'error',
-        {
-          allow: [
-            'count',
-            'defaultIfEmpty',
-            'endWith',
-            'every',
-            'finalize',
-            'finally',
-            'isEmpty',
-            'last',
-            'max',
-            'min',
-            'publish',
-            'publishBehavior',
-            'publishLast',
-            'publishReplay',
-            'reduce',
-            'share',
-            'shareReplay',
-            'skipLast',
-            'takeLast',
-            'throwIfEmpty',
-            'toArray',
-          ],
-        },
-      ],
       '@stylistic/ts/comma-dangle': ['error', 'always-multiline'],
       curly: ['error'],
       eqeqeq: 'error',
@@ -554,7 +542,6 @@ const config = tseslint.config(
         {
           paths: [
             '@example/example-library',
-            'rxjs-x/Rx',
             {
               name: 'lodash',
               message:
@@ -589,10 +576,10 @@ const config = tseslint.config(
   },
   {
     files: ['**/*.spec.ts', '**/*.spec.js', '**/*.spec.js', '**/*.test.js'],
-    ...jestPlugin.configs['flat/recommended'],
-    plugins: { jest: jestPlugin },
+    ...___configs['flat/recommended'],
+    plugins: { jest: jestPluginPkg },
     languageOptions: {
-      globals: jestPlugin.environments.globals.globals,
+      globals: environments.globals.globals,
     },
     rules: {
       'max-nested-callbacks': 'off',
@@ -672,7 +659,7 @@ const config = tseslint.config(
   {
     files: ['**/*.json', '**/*.jsonc'],
     plugins: {
-      jsonc: jsoncPlugin,
+      jsonc: jsoncPluginPkg,
     },
     rules: {
       '@nx/dependency-checks': [
@@ -681,7 +668,7 @@ const config = tseslint.config(
           ignoredFiles: ['{projectRoot}/eslint.config.{js,cjs,mjs}'],
         },
       ],
-      ...jsoncPlugin.configs['flat/recommended-with-jsonc'].rules,
+      ...__configs['flat/recommended-with-jsonc'].rules,
       '@/no-multiple-empty-lines': [
         'error',
         {
@@ -690,7 +677,7 @@ const config = tseslint.config(
       ],
     },
     languageOptions: {
-      parser: require('jsonc-eslint-parser'),
+      parser: jsonParser,
     },
   },
   {
@@ -705,11 +692,11 @@ const config = tseslint.config(
       },
     },
     plugins: {
-      jsdoc,
+      jsdoc: jsdocPluginPkg,
     },
     rules: {
-      ...jsdoc.configs['flat/recommended'].rules,
-      ...tseslint.configs.disableTypeChecked.rules,
+      ..._configs['flat/recommended'].rules,
+      ..._____configs.disableTypeChecked.rules,
       'no-undef': 0,
     },
   },
@@ -721,19 +708,19 @@ const config = tseslint.config(
     processor: 'markdown/markdown',
   },
   {
-    ...mdx.flat,
-    processor: mdx.createRemarkProcessor({
+    ...flat,
+    processor: createRemarkProcessor({
       lintCodeBlocks: true,
     }),
   },
   {
-    ...mdx.flatCodeBlocks,
+    ...flatCodeBlocks,
     rules: {
-      ...mdx.flatCodeBlocks.rules,
+      ...flatCodeBlocks.rules,
       'no-var': 'error',
       'prefer-const': 'error',
     },
   },
 );
 
-module.exports = config;
+export default config;

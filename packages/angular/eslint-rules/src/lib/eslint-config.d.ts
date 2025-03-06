@@ -1,4 +1,4 @@
-declare module './lib/eslint.config.js' {
+declare module './lib/eslint.config.mjs' {
   const config: unknown[];
   export default config;
 }
