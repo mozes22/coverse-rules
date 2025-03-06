@@ -1,3 +1,13 @@
+## 1.7.2 (2025-03-06)
+
+### 🩹 Fixes
+
+- **core:** converted all .js to .mjs, updated tsconfig to be compatible, updated project.json to have proper config and do conversion. ready for work
+
+### ❤️ Thank You
+
+- Coverse-Tech
+
 ## 1.7.1 (2025-03-06)
 
 This was a version bump only for angular-eslint-rules to align it with other projects, there were no code changes.
