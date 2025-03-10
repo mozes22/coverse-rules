@@ -16,7 +16,12 @@
         "main": "packages/common/stylelint-rules/src/index.ts",
         "tsConfig": "packages/common/stylelint-rules/tsconfig.lib.json",
         "assets": ["packages/common/stylelint-rules/*.md"],
-        "format": ["cjs"]
+        "format": ["esm"],
+        "esbuildOptions": {
+          "outExtension": {
+            ".js": ".mjs"
+          }
+        }
       }
     },
     "nx-release-publish": {

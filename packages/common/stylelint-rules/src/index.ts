@@ -1,4 +1,2 @@
-import stylelintrc from './lib/.stylelintrc.json';
-
-/* Expose the stylelintrc.json config */
-export = stylelintrc;
+import eslintjs from './lib/stylelint.config.mjs';
+export default eslintjs;
