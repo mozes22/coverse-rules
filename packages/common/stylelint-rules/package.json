@@ -27,6 +27,10 @@
     "stylelint-scss": ">=6.11.1",
     "stylelint-order": ">=6.0.4"
   },
-  "type": "commonjs",
-  "main": "./index.cjs"
+  "type": "module",
+  "main": "./index.mjs",
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.cjs"
+  }
 }
