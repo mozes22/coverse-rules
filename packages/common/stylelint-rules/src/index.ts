@@ -1,2 +1,2 @@
-import eslintjs from './lib/stylelint.config.mjs';
-export default eslintjs;
+import stylelintjs from './lib/stylelint.config.mjs';
+export default stylelintjs;
