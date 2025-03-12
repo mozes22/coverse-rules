@@ -1,3 +1,7 @@
+## 1.7.5 (2025-03-12)
+
+This was a version bump only for common-prettier-rules to align it with other projects, there were no code changes.
+
 ## 1.7.3 (2025-03-06)
 
 This was a version bump only for common-prettier-rules to align it with other projects, there were no code changes.

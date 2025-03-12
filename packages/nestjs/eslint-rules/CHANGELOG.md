@@ -1,3 +1,13 @@
+## 1.7.5 (2025-03-12)
+
+### 🩹 Fixes
+
+- **chore:** resolve import issue accross all eslint pkgs
+
+### ❤️ Thank You
+
+- eliassh
+
 ## 1.7.3 (2025-03-06)
 
 ### 🩹 Fixes
