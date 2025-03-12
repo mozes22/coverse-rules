@@ -18,6 +18,7 @@ import eslintNestJsPkg from '@darraghor/eslint-plugin-nestjs-typed';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import jsonParser from 'jsonc-eslint-parser';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -41,6 +42,16 @@ const { Linter } = eslintPkg;
 
 /** @type {Linter.Config} */
 const config = _config(
+  {
+    settings: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+          project: './tsconfig.*?.json',
+        }),
+      ],
+    },
+  },
   ..._______configs['flat/base'],
   ..._______configs['flat/typescript'],
   ..._______configs['flat/javascript'],

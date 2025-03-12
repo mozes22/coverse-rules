@@ -19,7 +19,7 @@ import eslintPluginMdx from 'eslint-plugin-mdx';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import jsonParser from 'jsonc-eslint-parser';
-
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const { configs: _configs } = jsDocPkg;
@@ -44,6 +44,16 @@ const { Linter } = eslint;
 
 /** @type {Linter.Config} */
 const config = _config(
+  {
+    settings: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+          project: './tsconfig.*?.json',
+        }),
+      ],
+    },
+  },
   ..._________configs['flat/base'],
   ..._________configs['flat/typescript'],
   ..._________configs['flat/javascript'],

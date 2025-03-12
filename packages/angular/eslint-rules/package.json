@@ -33,7 +33,7 @@
     "@nx/eslint-plugin": ">=20.4.6",
     "@eslint/js": ">=9.21.0",
     "jsonc-eslint-parser": ">=2.4.0",
-    "eslint-import-resolver-typescript": ">=3.8.3"
+    "eslint-import-resolver-typescript": ">=3.8.6"
   },
   "type": "module",
   "main": "./index.mjs",

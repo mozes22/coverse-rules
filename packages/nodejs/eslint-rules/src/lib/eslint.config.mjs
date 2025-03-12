@@ -16,6 +16,7 @@ import mdxPluginPkg from 'eslint-plugin-mdx';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import jsonParser from 'jsonc-eslint-parser';
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -38,6 +39,16 @@ const { flat, createRemarkProcessor, flatCodeBlocks } = mdxPluginPkg;
 
 /** @type {Linter.Config} */
 const config = _config(
+  {
+    settings: {
+      'import-x/resolver-next': [
+        createTypeScriptImportResolver({
+          alwaysTryTypes: true,
+          project: './tsconfig.*?.json',
+        }),
+      ],
+    },
+  },
   ...______configs['flat/base'],
   ...______configs['flat/typescript'],
   ...______configs['flat/javascript'],
