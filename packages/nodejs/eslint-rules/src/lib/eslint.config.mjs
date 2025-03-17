@@ -147,7 +147,6 @@ const config = _config(
     plugins: {
       'unused-imports': unusedImportsPlugin,
       '@typescript-eslint': plugin,
-      'import-x': importPluginPkg,
       n: nodePluginPkg,
       '@stylistic/ts': stylisticPluginPkg,
     },
