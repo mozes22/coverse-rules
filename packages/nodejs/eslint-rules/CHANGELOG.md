@@ -1,3 +1,13 @@
+## 1.7.6 (2025-03-17)
+
+### 🩹 Fixes
+
+- **chore:** remove duplicated import-x plugin from configs error #1
+
+### ❤️ Thank You
+
+- eliassh
+
 ## 1.7.5 (2025-03-12)
 
 ### 🩹 Fixes
